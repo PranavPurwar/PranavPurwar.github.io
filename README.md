@@ -1,4 +1,4 @@
-jakewharton.com
+pranavpurwar.ga
 ===============
 
 Blog posts, presentations, podcasts, and other things...
@@ -7,6 +7,7 @@ Blog posts, presentations, podcasts, and other things...
 Development
 ===========
 
+A fork of [Jake Wharton's blog](https://github.com/JakeWharton/jakewharton.com)
 Ensure you have the correct version of Ruby installed (per `.ruby-version`). Also ensure you have the Bundler gem installed.
 
 
