@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Me a Coffee</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f6f8fa;
+            color: #24292e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 450px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1rem;
+            color: #586069;
+            margin-bottom: 1.5rem;
+        }
+        .qr-code {
+            margin: 1.5rem 0;
+        }
+        .qr-code img {
+            max-width: 200px;
+            border-radius: 8px;
+            border: 1px solid #e1e4e8;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #218c3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey there! Thanks for considering sponsoring me.</h1>
+        <p>If my work has been helpful, you can buy me a coffee to show your appreciation. It means the world!</p>
+        
+        <div class="qr-code">
+            <img src="https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" alt="Scan to pay with UPI">
+        </div>
+
+        <p>Or, if you're on your phone, click the button below to pay instantly.</p>
+        
+        <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" class="cta-button">Pay with UPI</a>
+    </div>
+</body>
+</html>
