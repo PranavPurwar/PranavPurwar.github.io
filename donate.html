@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support My Work</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #ff8a65;
-            --color-primary-hover: #ff7043;
+            --color-primary: #ff5722;
+            --color-primary-hover: #e64a19; 
             --color-background: #f4f6f9;
             --color-container-bg: #ffffff;
-            --color-text-dark: #2c3e50;
-            --color-text-light: #7f8c8d;
-            --color-border: #e8e8e8;
+            --color-text-dark: #1f2937;
+            --color-text-light: #6b7280;
+            --color-border: #e5e7eb;
             --color-tab-active: var(--color-primary);
-            --color-tab-inactive: #aeb6bf;
+            --color-tab-inactive: #9ca3af;
             --color-address-bg: #f8f8f8;
+            --color-success: #4CAF50;
+            --radius-default: 12px;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -30,92 +33,108 @@
                 --color-tab-inactive: #666666;
                 --color-address-bg: #2a2a2a;
             }
-            .container {
-                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--color-background);
             color: var(--color-text-dark);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
+            align-items: flex-start;
+            padding: 2rem 1rem;
             margin: 0;
-            transition: background-color 0.4s, color 0.4s;
+            box-sizing: border-box;
+            min-height: auto;
         }
 
         .container {
-            background-color: var(--color-container-bg);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 3rem 2.5rem;
-            max-width: 480px;
+            max-width: 500px;
             width: 100%;
-            border: 1px solid var(--color-border);
-            transition: background-color 0.4s, border-color 0.4s, box-shadow 0.4s;
+            padding: 3rem 1.75rem;
+            box-sizing: border-box;
+            height: auto;
+            text-align: center;
         }
+
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             margin-bottom: 0.5rem;
-            color: var(--color-text-dark);
             font-weight: 800;
         }
         .subtitle {
             font-size: 1rem;
             color: var(--color-text-light);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .cta-button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--color-primary);
             color: #ffffff;
-            padding: 1rem 2rem;
+            padding: 1rem 2rem; 
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1.15rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(255, 138, 101, 0.4);
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+            margin-bottom: 1.5rem;
+            width: 100%; 
+            box-sizing: border-box;
+            gap: 8px;
         }
         .cta-button:hover {
             background-color: var(--color-primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 138, 101, 0.6);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
         }
 
         .tabs {
             display: flex;
-            justify-content: center;
-            border-bottom: 1px solid var(--color-border);
-            margin-bottom: 1.5rem;
-            gap: 0.5rem;
+            width: 100%;
+            padding: 0 0 0.5rem 0;
+            border-bottom: 2px solid var(--color-border);
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            justify-content: flex-start;
         }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tabs { -ms-overflow-style: none; scrollbar-width: none; }
+
         .tab-button {
+            flex-shrink: 0;
             background: none;
             border: none;
-            padding: 0.75rem 1rem;
+            padding: 0.75rem 0;
             font-size: 1rem;
             font-weight: 600;
             color: var(--color-tab-inactive);
             cursor: pointer;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-            margin-bottom: -1px;
+            position: relative;
             outline: none;
         }
         .tab-button.active {
             color: var(--color-tab-active);
-            border-bottom: 3px solid var(--color-tab-active);
+        }
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-tab-active);
+            border-radius: 1.5px;
         }
         .tab-button:hover:not(.active) {
             color: var(--color-text-dark);
@@ -130,147 +149,279 @@
             display: block;
         }
         .tab-content p:first-of-type {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
         }
+        
         .qr-code {
-            padding: 1rem;
-            background-color: var(--color-container-bg);
-            border-radius: 12px;
+            border-radius: 8px;
             display: inline-block;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 0.5rem;
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-border);
         }
         .qr-code img {
             max-width: 150px;
             height: auto;
             border-radius: 4px;
-            border: 1px solid var(--color-border);
             display: block;
         }
+        
         .wallet-address-container {
             background-color: var(--color-address-bg);
-            padding: 1rem;
-            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
             font-family: 'Roboto Mono', monospace;
             word-break: break-all;
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
+            margin-top: 1.75rem;
+            font-size: 0.9rem;
             position: relative;
             text-align: left;
             border: 1px solid var(--color-border);
-            line-height: 1.5;
+            line-height: 1.6;
+            box-shadow: var(--shadow-subtle);
         }
+        
         .address-text {
             color: var(--color-text-dark);
             font-weight: 500;
+            display: block;
+            padding-right: 80px;
         }
+        
         .copy-button {
             position: absolute;
-            top: 1rem;
+            top: 50%;
             right: 1rem;
-            transform: none;
+            transform: translateY(-50%);
             background-color: var(--color-primary);
             color: #ffffff;
             border: none;
-            border-radius: 6px;
-            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 600;
-            transition: background-color 0.2s, transform 0.1s;
+            transition: background-color 0.3s, transform 0.2s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .copy-button:hover {
             background-color: var(--color-primary-hover);
-            transform: translateY(-1px);
+            transform: translateY(-50%) scale(1.02);
         }
+        .copy-button.copied {
+            background-color: var(--color-success) !important;
+            transform: translateY(-50%);
+        }
+        
         .address-label {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--color-text-light);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-weight: 700;
+        }
+
+        .info-note {
+            margin-top: 1.5rem; 
+            font-size: 0.85rem; 
+            color: var(--color-text-light);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .tab-content p:last-of-type {
+            font-size: 0.9rem; 
+            color: var(--color-text-light); 
+            margin-top: 1.5rem;
+            border: none;
+            box-shadow: none;
+            text-shadow: none;
+            padding: 0;
+            background: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Support My Work</h1>
-        <p class="subtitle">If my projects or work have been helpful, a coffee would mean the world! Your support helps keep the work going.</p>
+        <p class="subtitle">If my projects or work have been helpful, a contribution helps keep the work going.</p>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'upi')">UPI</button>
-            <button class="tab-button" onclick="openTab(event, 'ethereum')">Ethereum</button>
-            <button class="tab-button" onclick="openTab(event, 'solana')">Solana</button>
+        <div class="tabs" id="payment-tabs">
+            <button class="tab-button" data-tab-id="bitcoin" onclick="openTab(event, 'bitcoin')">Bitcoin</button>
+            <button class="tab-button" data-tab-id="ethereum" onclick="openTab(event, 'ethereum')">Ethereum</button>
+            <button class="tab-button" data-tab-id="solana" onclick="openTab(event, 'solana')">Solana</button>
+            <button class="tab-button" data-tab-id="upi" onclick="openTab(event, 'upi')">UPI</button>
+            <button class="tab-button" data-tab-id="monero" onclick="openTab(event, 'monero')">Monero</button>
+                        <button class="tab-button" data-tab-id="litecoin" onclick="openTab(event, 'litecoin')">Litecoin</button>
         </div>
 
-        <div id="upi" class="tab-content active">
+        <div id="bitcoin" class="tab-content">
+            <p>You can send BTC to this native SegWit (bech32) Bitcoin wallet address:</p>
+            <div class="wallet-address-container">
+                <span class="address-label">Bitcoin Wallet Address (Native SegWit):</span>
+                <span id="btc-address" class="address-text">bc1qec5ccz85qn90a6zxnqnes0rx274cv6vw7j5x4g</span>
+                <button class="copy-button" onclick="copyAddress('btc-address', this)">Copy</button>
+            </div>
+            <div class="info-note">
+                Native SegWit (starts with 'bc1') is recommended for lower transaction fees.
+            </div>
+        </div>
+        
+        <div id="ethereum" class="tab-content">
+            <p>You can send ETH or any ERC-20 token (like DAI or USDC) to this wallet address:</p>
+            <div class="wallet-address-container">
+                <span class="address-label">Ethereum / ERC-20 Wallet Address:</span>
+                <span id="eth-address" class="address-text">0xD80A8D6E0fa433A8bDFC2D3F325159Db70605816</span>
+                <button class="copy-button" onclick="copyAddress('eth-address', this)">Copy</button>
+            </div>
+            <div class="info-note">
+                <strong>Note:</strong> This is the <strong>Ethereum Mainnet</strong> address. Please double-check the network before sending.
+            </div>
+        </div>
+
+        <div id="solana" class="tab-content">
+            <p>Send SOL or any SPL token (like USDC-SPL) to this Solana wallet address:</p>
+            <div class="wallet-address-container">
+                <span class="address-label">Solana Wallet Address:</span>
+                <span id="sol-address" class="address-text">7FxTAJLmhXFp6wxVbUTpf8jDmzEX1CKVMdE8oLPNQvyb</span>
+                <button class="copy-button" onclick="copyAddress('sol-address', this)">Copy</button>
+            </div>
+            <div class="info-note">
+                Solana transactions are typically very fast and cheap!
+            </div>
+        </div>
+
+        <div id="upi" class="tab-content">
             <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" class="cta-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 Pay with UPI
             </a>
             <p style="font-size: 0.95rem; color: var(--color-text-light);">Scan the QR code below or use the button above for instant payment:</p>
             <div class="qr-code">
                 <img src=" https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg " alt="Scan to pay with UPI">
             </div>
+            <div class="info-note">
+                UPI is the recommended and fastest payment method for India residents.
+            </div>
+        </div>
+        
+        <div id="litecoin" class="tab-content">
+            <p>Send LTC to this Litecoin wallet address:</p>
+            <div class="wallet-address-container">
+                <span class="address-label">Litecoin Wallet Address:</span>
+                <span id="ltc-address" class="address-text">ltc1q3pqyj5ge5rdmqr00w03x4tlhm6rhcc6wrfyx8k</span>
+                <button class="copy-button" onclick="copyAddress('ltc-address', this)">Copy</button>
+            </div>
+            <div class="info-note">
+                LTC is known for low fees and fast confirmation times.
+            </div>
         </div>
 
-        <div id="ethereum" class="tab-content">
-            <p>You can send <strong>ETH</strong> or any <strong>ERC-20</strong> token (like DAI or USDC) to this wallet address:</p>
+        <div id="monero" class="tab-content">
+            <p>Send XMR to this Monero wallet address for maximum privacy:</p>
             <div class="wallet-address-container">
-                <span class="address-label">Ethereum / ERC-20 Wallet Address:</span>
-                <span id="eth-address" class="address-text">0x1e7798266329EF6637a63B6f030A5c9fd92Ed0bb</span>
-                <button class="copy-button" onclick="copyAddress('eth-address', this)">Copy</button>
+                <span class="address-label">Monero Wallet Address:</span>
+                <span id="xmr-address" class="address-text">44w9JtiXxwifyH5CU6Ln1BNViyWNz4z7pEZ4nqbCvUejiK3yEjdyAv6bAofXX2Eh6Fbe3DXJ6eCX6YWKh9SF15fyKBjeJ5H</span>
+                <button class="copy-button" onclick="copyAddress('xmr-address', this)">Copy</button>
             </div>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--color-text-light);">
-                (Please double-check the network before sending. This is the <strong>Ethereum mainnet</strong>.)
-            </p>
-        </div>
-
-        <div id="solana" class="tab-content">
-            <p>Send <strong>SOL</strong> or any <strong>SPL token</strong> (like USDC-SPL) to this Solana wallet address:</p>
-            <div class="wallet-address-container">
-                <span class="address-label">Solana Wallet Address:</span>
-                <span id="sol-address" class="address-text">959dJLWUQrFVxW3YD2sfmawdQUjHUH45u9W5R3ALLzi8</span>
-                <button class="copy-button" onclick="copyAddress('sol-address', this)">Copy</button>
+            <div class="info-note">
+                Monero ensures your support remains private and untraceable.
             </div>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--color-text-light);">
-                (Solana transactions are fast and cheap!)
-            </p>
         </div>
+        
     </div>
 
     <script>
         function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.tab-button').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            const contentElement = document.getElementById(tabName);
+            
+            contentElement.style.display = 'block';
+            contentElement.classList.add('active');
+            evt.currentTarget.classList.add('active');
+           
+            evt.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
 
         function copyAddress(elementId, buttonElement) {
             const address = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(address).then(() => {
+            navigator.clipboard.writeText(address.trim()).then(() => {
                 const originalText = buttonElement.innerText;
+
                 buttonElement.innerText = 'Copied!';
-                buttonElement.style.backgroundColor = '#4CAF50';
+                buttonElement.classList.add('copied');
+                
                 setTimeout(() => {
                     buttonElement.innerText = originalText;
-                    buttonElement.style.backgroundColor = '';
+                    buttonElement.classList.remove('copied');
                 }, 1500);
+                
             }).catch(err => {
                 console.error('Could not copy text: ', err);
                 alert('Could not copy address. Please copy it manually: ' + address);
             });
         }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.getElementById('payment-tabs');
+            const containerDiv = document.querySelector('.container');
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            
+            const isIndianUser = /en-IN|hi|mr|ta|te|kn|ml|gu|bn|pa|or|as|ne|ur/i.test(browserLanguage);
+            
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+
+            const allTabContents = document.querySelectorAll('.tab-content');
+            const idsSeen = new Set();
+            for (let i = allTabContents.length - 1; i >= 0; i--) {
+                const el = allTabContents[i];
+                if (idsSeen.has(el.id)) {
+                    el.remove();
+                } else {
+                    idsSeen.add(el.id);
+                }
+            }
+            
+            let defaultTabId = 'bitcoin';
+
+            if (isIndianUser) {
+                const upiButton = document.querySelector('.tab-button[data-tab-id="upi"]');
+                const upiContent = document.getElementById('upi');
+                
+                if (upiButton && upiContent) {
+                    tabsContainer.prepend(upiButton);
+                    containerDiv.insertBefore(upiContent, tabsContainer.nextElementSibling);
+                    defaultTabId = 'upi';
+                }
+            }
+
+            const defaultButton = document.querySelector(`.tab-button[data-tab-id="${defaultTabId}"]`);
+            const defaultContent = document.getElementById(defaultTabId);
+
+            if(defaultButton && defaultContent) {
+                defaultButton.classList.add('active');
+                defaultContent.style.display = 'block';
+                defaultContent.classList.add('active');
+            }
+        });
     </script>
 </body>
 </html>
