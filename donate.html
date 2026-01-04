@@ -13,6 +13,7 @@
             --card: #0a0a0a;
             --border: #1a1a1a;
             --muted: #666666;
+            --upi: #245e99;
         }
 
         body {
@@ -47,7 +48,6 @@
             max-width: 320px;
         }
 
-        /* The Selector: Custom Segmented Control */
         .selector {
             background: var(--card);
             border: 1px solid var(--border);
@@ -78,7 +78,6 @@
             color: #000000;
         }
 
-        /* Address Presentation */
         .display-pane {
             background: var(--card);
             border: 1px solid var(--border);
@@ -105,6 +104,7 @@
         .qr-section {
             text-align: center;
             margin-bottom: 24px;
+            display: none;
         }
 
         .qr-frame {
@@ -112,12 +112,15 @@
             padding: 12px;
             border-radius: 12px;
             display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            box-sizing: border-box;
         }
 
         .qr-frame img {
             display: block;
-            width: 140px;
-            height: 140px;
+            width: 100%;
+            height: auto;
         }
 
         .address-well {
@@ -134,15 +137,16 @@
             transition: color 0.2s;
         }
 
-        .address-well:hover {
-            color: #fff;
+        .address-well:hover { color: #fff; }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        /* Action Button */
-        .copy-btn {
+        .copy-btn, .upi-btn {
             width: 100%;
-            background: #fff;
-            color: #000;
             border: none;
             padding: 18px;
             border-radius: 12px;
@@ -150,11 +154,16 @@
             font-weight: 800;
             cursor: pointer;
             transition: transform 0.1s, background 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
         }
 
-        .copy-btn:active {
-            transform: scale(0.98);
-        }
+        .copy-btn { background: #fff; color: #000; }
+        .upi-btn { background: var(--upi); color: #fff; display: none; }
+        .copy-btn:active, .upi-btn:active { transform: scale(0.98); }
 
         #toast {
             position: fixed;
@@ -171,10 +180,7 @@
             pointer-events: none;
         }
 
-        #toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        #toast.show { opacity: 1; transform: translateY(0); }
 
         .fade-in { animation: fadeIn 0.4s ease; }
         @keyframes fadeIn {
@@ -192,42 +198,45 @@
     <p class="desc">Help fuel independent development. Your contributions keep the project alive.</p>
 
     <div class="selector">
-        <button class="option active" onclick="switchTab('upi', this)">UPI</button>
-        <button class="option" onclick="switchTab('btc', this)">BTC</button>
+        <button class="option active" onclick="switchTab('btc', this)">BTC</button>
         <button class="option" onclick="switchTab('eth', this)">ETH</button>
         <button class="option" onclick="switchTab('sol', this)">SOL</button>
         <button class="option" onclick="switchTab('xmr', this)">XMR</button>
         <button class="option" onclick="switchTab('ltc', this)">LTC</button>
+        <button class="option" onclick="switchTab('upi', this)">UPI</button>
         <button class="option" onclick="switchTab('poly', this)" style="grid-column: span 3;">Polygon (PoS)</button>
     </div>
 
     <div class="display-pane">
         <div id="content-body" class="fade-in">
             <div class="header-row">
-                <span class="net-badge" id="net-name">Direct Transfer</span>
+                <span class="net-badge" id="net-name">Bitcoin Mainnet</span>
             </div>
 
             <div id="qr-wrapper" class="qr-section">
                 <div class="qr-frame">
-                    <img id="qr-img" src="https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" alt="QR">
+                    <img id="qr-img" src="" alt="QR">
                 </div>
             </div>
 
-            <div class="address-well" id="addr-box">pranavpurwar@fam</div>
+            <div class="address-well" id="addr-box">bc1q3eesyfn7lhql4c2khv56cyvw2374zkhe7r97hz</div>
         </div>
 
-        <button class="copy-btn" onclick="copyAction()">Copy Address</button>
+        <div class="actions">
+            <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" id="upi-link" class="upi-btn">Open UPI App</a>
+            <button class="copy-btn" onclick="copyAction()">Copy Address</button>
+        </div>
     </div>
 </div>
 
 <script>
     const wallets = {
-        upi: { addr: "pranavpurwar@fam", net: "Unified Payments", qr: "https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" },
         btc: { addr: "bc1q3eesyfn7lhql4c2khv56cyvw2374zkhe7r97hz", net: "Bitcoin Mainnet", qr: null },
         eth: { addr: "0xD80A8D6E0fa433A8bDFC2D3F325159Db70605816", net: "Ethereum / ERC20", qr: null },
         sol: { addr: "7FxTAJLmhXFp6wxVbUTpf8jDmzEX1CKVMdE8oLPNQvyb", net: "Solana Network", qr: null },
         xmr: { addr: "848dAWBVk8GMaoRHg6HUP5CbkpY9pJra1KNQAo9yJ6vbJLFsjFD8ZHkGpi6FhVY7rsD4U9iR7brk64eknsC3bS7tV9JRU4f", net: "Monero Privacy", qr: null },
         ltc: { addr: "ltc1q3pqyj5ge5rdmqr00w03x4tlhm6rhcc6wrfyx8k", net: "Litecoin Network", qr: null },
+        upi: { addr: "pranavpurwar@fam", net: "Unified Payments", qr: "https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" },
         poly: { addr: "0xD80A8D6E0fa433A8bDFC2D3F325159Db70605816", net: "Polygon PoS", qr: null }
     };
 
@@ -244,19 +253,28 @@
         document.getElementById('addr-box').innerText = data.addr;
         document.getElementById('net-name').innerText = data.net;
 
+        document.getElementById('upi-link').style.display = (key === 'upi') ? 'flex' : 'none';
+
         const qrWrap = document.getElementById('qr-wrapper');
+        const qrImg = document.getElementById('qr-img');
+        
         if(data.qr) {
+            qrImg.src = data.qr;
             qrWrap.style.display = 'block';
-            document.getElementById('qr-img').src = data.qr;
         } else {
             qrWrap.style.display = 'none';
+            qrImg.src = ''; 
         }
     }
+
+    window.onload = () => {
+        const btcBtn = document.querySelector('.option');
+        switchTab('btc', btcBtn);
+    };
 
     function copyAction() {
         const text = document.getElementById('addr-box').innerText;
         navigator.clipboard.writeText(text);
-        
         const toast = document.getElementById('toast');
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2000);
