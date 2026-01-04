@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -190,16 +189,14 @@
         }
     </style>
 </head>
-
 <body>
 
     <div id="toast">COPIED TO CLIPBOARD</div>
 
     <div class="container">
         <h1>Support.</h1>
-        <p class="desc">Help fuel independent development. Your contributions keep the project alive.
-        </p>
-
+        <p class="desc">Help fuel independent development. Your contributions keep the project alive.</p>
+        
         <div class="selector" id="payment-selector">
             <button class="option" data-id="btc" onclick="switchTab('btc', this)">BTC</button>
             <button class="option" data-id="eth" onclick="switchTab('eth', this)">ETH</button>
@@ -207,9 +204,9 @@
             <button class="option" data-id="xmr" onclick="switchTab('xmr', this)">XMR</button>
             <button class="option" data-id="ltc" onclick="switchTab('ltc', this)">LTC</button>
             <button class="option" data-id="upi" onclick="switchTab('upi', this)">UPI</button>
-            <button class="option" data-id="poly" onclick="switchTab('poly', this)" style="grid-column: span 3;">
-            Polygon (PoS)
-        </button>
+            <button class="option" data-id="poly" data-id="poly" onclick="switchTab('poly', this)" style="grid-column: span 3;">
+                Polygon (PoS)
+            </button>
         </div>
 
         <div class="display-pane">
@@ -217,16 +214,13 @@
                 <div class="header-row">
                     <span class="net-badge" id="net-name">Bitcoin Mainnet</span>
                 </div>
-
                 <div id="qr-wrapper" class="qr-section">
                     <div class="qr-frame">
                         <img id="qr-img" src="" alt="QR">
                     </div>
                 </div>
-
                 <div class="address-well" id="addr-box">bc1q3eesyfn7lhql4c2khv56cyvw2374zkhe7r97hz</div>
             </div>
-
             <div class="actions">
                 <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" id="upi-link" class="upi-btn">Open UPI App</a>
                 <button class="copy-btn" onclick="copyAction()">Copy Address</button>
@@ -244,28 +238,28 @@
             upi: { addr: "pranavpurwar@fam", net: "Unified Payments", qr: "https://github.com/PranavPurwar/Reef/raw/refs/heads/main/upi.jpeg" },
             poly: { addr: "0xD80A8D6E0fa433A8bDFC2D3F325159Db70605816", net: "Polygon PoS", qr: null }
         };
-    
+
         function switchTab(key, btn) {
-            if (!btn) return;
-    
+            if (!btn || !wallets[key]) return;
+
             document.querySelectorAll('.option').forEach(o => o.classList.remove('active'));
             btn.classList.add('active');
-    
+
             const body = document.getElementById('content-body');
             body.classList.remove('fade-in');
             void body.offsetWidth;
             body.classList.add('fade-in');
-    
+
             const data = wallets[key];
             document.getElementById('addr-box').innerText = data.addr;
             document.getElementById('net-name').innerText = data.net;
-    
+
             document.getElementById('upi-link').style.display = (key === 'upi') ? 'flex' : 'none';
-    
+
             const qrWrap = document.getElementById('qr-wrapper');
             const qrImg = document.getElementById('qr-img');
-    
-            if(data.qr) {
+
+            if (data.qr) {
                 qrImg.src = data.qr;
                 qrWrap.style.display = 'block';
             } else {
@@ -273,51 +267,48 @@
                 qrImg.src = '';
             }
         }
-    
+
         document.addEventListener('DOMContentLoaded', async () => {
-        const selector = document.getElementById('payment-selector');
-        const upiBtn = document.querySelector('.option[data-id="upi"]');
-        
-        let countryCode = null;
-    
-        try {
-            const response = await fetch('https://www.cloudflare.com/cdn-cgi/trace', { 
-                signal: AbortSignal.timeout(2000)
-            });
-            const text = await response.text();
-            countryCode = text.match(/loc=([A-Z]{2})/)?.[1];
-        } catch (e) {
-            console.warn("API failed, moving to secondary check...");
-        }
-    
-        if (!countryCode) {
+            const selector = document.getElementById('payment-selector');
+            const upiBtn = document.querySelector('.option[data-id="upi"]');
             const browserLang = navigator.language || navigator.userLanguage;
-            if (/en-IN|hi|mr|ta|te|kn|ml|gu|bn|pa|or|as|ne|ur/i.test(browserLang)) {
-                countryCode = 'IN';
+
+            let isIndian = /en-IN|hi|mr|ta|te|kn|ml|gu|bn|pa|or|as|ne|ur/i.test(browserLang);
+
+            try {
+                const response = await fetch('https://www.cloudflare.com/cdn-cgi/trace', {
+                    mode: 'cors',
+                    redirect: 'follow'
+                });
+
+                if (response.ok) {
+                    const text = await response.text();
+                    if (text.includes('loc=IN')) {
+                        isIndian = true;
+                    }
+                }
+            } catch (e) {
+                console.warn("Geo-check blocked or failed. Using language fallback.");
             }
-        }
-    
-        const isIndian = (countryCode === 'IN');
-        let defaultKey = 'btc';
-    
-        if (isIndian && upiBtn) {
-            selector.prepend(upiBtn);
-            defaultKey = 'upi';
-        }
-    
-        const targetBtn = document.querySelector(`.option[data-id="${defaultKey}"]`) || document.querySelector('.option');
-        switchTab(defaultKey, targetBtn);
-    });
-    
+
+            const defaultKey = isIndian ? 'upi' : 'btc';
+
+            if (isIndian && upiBtn && selector) {
+                selector.prepend(upiBtn);
+            }
+
+            const targetBtn = document.querySelector(`.option[data-id="${defaultKey}"]`) || document.querySelector('.option');
+            switchTab(defaultKey, targetBtn);
+        });
+
         function copyAction() {
             const text = document.getElementById('addr-box').innerText;
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            });
         }
     </script>
-
 </body>
-
 </html>
