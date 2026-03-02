@@ -57,7 +57,6 @@
       margin-top: 6px;
     }
 
-    /* Unified Dark Card for Open Collective */
     .primary-action {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -126,7 +125,6 @@
       margin-left: 12px;
     }
 
-    /* Secondary: Crypto/UPI */
     .terminal {
       background: #0d0d10;
       border: 1px solid var(--border);
@@ -199,20 +197,20 @@
 
     .qr-frame {
       background: #fff;
-      padding: 8px;
       border-radius: 8px;
       display: inline-block;
+      overflow: hidden;
+      line-height: 0;
     }
 
     .qr-frame img {
-      width: 130px;
-      height: 130px;
+      width: 160px;
+      height: auto;
       display: block;
     }
 
-    /* Actions */
     .btn-upi {
-      background: #00baf2;
+      background: #0f53a4;
       color: white;
       text-decoration: none;
       display: none;
@@ -223,6 +221,22 @@
       font-weight: 800;
       font-size: 13px;
       margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .btn-upi:hover {
+      background: #1d69c6;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 8px;
+      cursor: pointer;
     }
 
     .btn-copy {
