@@ -5,304 +5,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate | invokevirtual</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;800&family=JetBrains+Mono:wght@500&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --bg: #09090b;
-      --panel: #111114;
-      --border: #222226;
-      --accent: #6366f1;
-      --text-main: #ffffff;
-      --text-dim: #71717a;
-    }
-
-    * {
-      box-sizing: border-box;
-      transition: 0.15s ease;
-    }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 24px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-    }
-
-    .header {
-      margin-bottom: 24px;
-    }
-
-    .header h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      margin: 0;
-    }
-
-    .header p {
-      color: var(--text-dim);
-      font-size: 14px;
-      margin-top: 6px;
-    }
-
-    .primary-action {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .primary-action:hover {
-      border-color: var(--accent);
-      background: #16161c;
-      transform: translateY(-2px);
-    }
-
-    .icon-box {
-      width: 44px;
-      height: 44px;
-      background: #1a1a20;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-    }
-
-    .primary-info {
-      flex: 1;
-    }
-
-    .primary-info strong {
-      display: block;
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .primary-info span {
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      color: #333;
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #1a1a1a;
-      margin-left: 12px;
-    }
-
-    .terminal {
-      background: #0d0d10;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 20px;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-      scrollbar-width: none;
-    }
-
-    .tab {
-      padding: 8px 14px;
-      background: transparent;
-      border: 1px solid #1a1a1a;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-dim);
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .tab:hover {
-      border-color: #333;
-      color: #eee;
-    }
-
-    .tab.active {
-      background: #fff;
-      color: #000;
-      border-color: #fff;
-    }
-
-    .display-well {
-      background: #050505;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 16px;
-      border: 1px solid #161616;
-    }
-
-    .net-tag {
-      font-size: 9px;
-      font-weight: 800;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .address {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      word-break: break-all;
-      color: #ccc;
-      line-height: 1.5;
-    }
-
-    .qr-section {
-      display: none;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .qr-frame {
-      background: #fff;
-      border-radius: 8px;
-      display: inline-block;
-      overflow: hidden;
-      line-height: 0;
-    }
-
-    .qr-frame img {
-      width: 160px;
-      height: auto;
-      display: block;
-    }
-
-    .btn-upi {
-      background: #0f53a4;
-      color: white;
-      text-decoration: none;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-
-    .btn-upi:hover {
-      background: #1d69c6;
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-
-    .btn-copy {
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-      border: 1px solid #222;
-      background: #16161a;
-      color: #fff;
-    }
-
-    .btn-copy:hover {
-      background: #1c1c22;
-      border-color: #444;
-    }
-
-    #toast {
-      position: fixed;
-      bottom: 30px;
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 11px;
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-    }
-
-    #toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
-
-  <div id="toast">COPIED</div>
+<body class="donate-page">
+  <div class="bg-grid"></div>  
 
   <div class="container">
+    <nav class="nav-header">
+      <a href="/" class="nav-brand">
+        <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>
+        <div>
+          <div class="brand-title">Pranav Purwar</div>
+          <div class="brand-handle">@invokevirtual</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/blog/index.html" class="nav-link">Blog</a>
+        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>
+      </div>
+    </nav>
+
     <div class="header">
       <h1>Support.</h1>
       <p>Help fund the open-source mission.</p>
     </div>
 
-    <a href="https://opencollective.com/invokevirtual" target="_blank" class="primary-action">
-      <div class="icon-box">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2" />
-          <line x1="2" y1="10" x2="22" y2="10" />
+    <p class="lead">If you find my open-source work useful, consider supporting development and maintenance. Contributions fund ongoing development, CI infrastructure, and free community resources.</p>
+
+    <div class="cta-row">
+      <a href="https://opencollective.com/invokevirtual" target="_blank" class="primary-action">
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+        </div>
+        <div class="primary-info">
+          <strong>Card or PayPal</strong>
+          <span>Instant via Open Collective</span>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4">
+          <path d="M9 18l6-6-6-6" />
         </svg>
-      </div>
-      <div class="primary-info">
-        <strong>Card or PayPal</strong>
-        <span>Instant via Open Collective</span>
-      </div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4">
-        <path d="M9 18l6-6-6-6" />
-      </svg>
-    </a>
+      </a>
+
+      <a href="https://github.com/sponsors/PranavPurwar" target="_blank" class="primary-action">
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+        </div>
+        <div class="primary-info">
+          <strong>GitHub Sponsors</strong>
+          <span>Support via GitHub</span>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </a>
+    </div>
 
     <div class="divider">Crypto & UPI</div>
 
@@ -327,7 +94,7 @@
       </div>
 
       <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" id="upi-btn" class="btn-upi">Open UPI App</a>
-      <button class="btn-copy" onclick="copyAction()">Copy Address</button>
+      <button class="btn-copy" onclick="copyAction(this)">Copy Address</button>
     </div>
   </div>
 
@@ -355,21 +122,36 @@
       } else { qrWrap.style.display = 'none'; }
     }
 
-    function copyAction() {
+    function copyAction(btn) {
       const text = document.getElementById('addr-box').innerText;
+      const original = btn.innerText;
       navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
+        btn.innerText = 'Copied';
+        setTimeout(() => btn.innerText = original, 1400);
+      }).catch(() => {
+        btn.innerText = 'Copy failed';
+        setTimeout(() => btn.innerText = original, 1400);
       });
     }
 
     window.onload = () => {
       const isIN = /en-IN|hi|mr|ta|te|kn|ml|gu|bn|pa|or|as|ne|ur/i.test(navigator.language);
       const def = isIN ? 'upi' : 'btc';
-      switchTab(def, document.querySelector(`[data-id="${def}"]`));
+      const preferred = document.querySelector(`[data-id="${def}"]`) || document.querySelector('.tab');
+      if(preferred) switchTab(preferred.dataset.id || def, preferred);
     };
   </script>
+  <footer>
+    <div>
+      © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
+    </div>
+    <div class="footer-links">
+      <a href="/cv.pdf" download>Download CV (PDF)</a>
+      <a href="/donate.html">Sponsor / Donate</a>
+      <a href="mailto:purwarpranav80@gmail.com">Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 
 </html>
