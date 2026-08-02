@@ -39,18 +39,68 @@ def regen_index(posts):
     lines = [
         '<!doctype html>',
         '<html lang="en">',
-        '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blog — Pranav Purwar</title><style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;sans-serif;background:#0b0c0e;color:#eef0f2;margin:0;padding:28px}.wrap{max-width:880px;margin:0 auto}a{color:#3b82f6;text-decoration:none}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.post{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:10px;margin-bottom:12px}time{color:#98a0a6;font-family:JetBrains Mono}</style></head>',
-        '<body><div class="wrap">',
-        '<header><h1>Blog</h1><nav><a href="/index.html">Back</a></nav></header>',
-        '<section>'
+        '<head>',
+        '  <meta charset="utf-8">',
+        '  <meta name="viewport" content="width=device-width,initial-scale=1">',
+        '  <title>Blog — Pranav Purwar</title>',
+        '  <link rel="stylesheet" href="/styles.css">',
+        '</head>',
+        '<body>',
+        '  <div class="bg-grid"></div>',
+        '  <div class="container">',
+        '    <nav class="nav-header">',
+        '      <a href="/" class="nav-brand">',
+        '        <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>',
+        '        <div>',
+        '          <div class="brand-title">Pranav Purwar</div>',
+        '          <div class="brand-handle">@invokevirtual</div>',
+        '        </div>',
+        '      </a>',
+        '      <div class="nav-links">',
+        '        <a href="/" class="nav-link">Home</a>',
+        '        <a href="/blog/index.html" class="nav-link">Blog</a>',
+        '        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>',
+        '        <a href="/donate.html" class="btn btn-primary">Sponsor</a>',
+        '      </div>',
+        '    </nav>',
+        '    <section class="hero-section">',
+        '      <h1 class="hero-title">Blog</h1>',
+        '      <p class="hero-subtitle">I\'ve been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>',
+        '    </section>',
+        '    <section id="posts">',
+        '      <div class="projects-grid">'
     ]
     for p in posts:
-        lines.append('<article class="post">')
-        lines.append(f'<h2><a href="{p["file"]}">{p["title"]}</a></h2>')
+        lines.append('        <article class="project-card">')
+        lines.append('          <div class="card-top">')
+        lines.append('            <div>')
+        lines.append(f'              <div class="project-meta">')
+        lines.append(f'                <span class="project-name"><a href="{p["file"]}">{p["title"]}</a></span>')
+        lines.append('              </div>')
         if p.get('date'):
-            lines.append(f'<div><time datetime="{p["date"]}">{p["date"]}</time></div>')
-        lines.append('</article>')
-    lines.append('</section></div></body></html>')
+            lines.append(f'              <div class="project-date"><time datetime="{p["date"]}">{p["date"]}</time></div>')
+        lines.append('            </div>')
+        lines.append('          </div>')
+        lines.append('          <p class="project-summary">Notes on Android, JVM, and modern software.</p>')
+        lines.append('        </article>')
+    lines.extend([
+        '      </div>',
+        '    </section>',
+        '    <footer>',
+        '      <div>',
+        '        © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.',
+        '      </div>',
+        '      <div class="footer-links">',
+        '        <a href="/cv.pdf" download>Download CV (PDF)</a>',
+        '        <a href="/donate.html">Sponsor / Donate</a>',
+        '        <a href="mailto:purwarpranav80@gmail.com">Contact</a>',
+        '      </div>',
+        '    </footer>',
+        '  </div>',
+        '  <script>document.getElementById(\'year\').textContent=new Date().getFullYear();</script>',
+        '</body>',
+        '</html>'
+    ])
     with open(BLOG_INDEX, 'w', encoding='utf8') as f:
         f.write('\n'.join(lines))
     print('Wrote', BLOG_INDEX)
