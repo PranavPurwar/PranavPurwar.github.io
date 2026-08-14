@@ -121,22 +121,57 @@ TEMPLATE = '''<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{title}</title>
-  <style>body{{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;sans-serif;background:#0b0c0e;color:#eef0f2;margin:0;padding:28px}}.wrap{{max-width:900px;margin:0 auto}}a{{color:#3b82f6}}pre,code{{font-family:JetBrains Mono,monospace;background:#050506;padding:6px;border-radius:6px}}header{{margin-bottom:18px}}footer{{margin-top:28px;color:#98a0a6}}</style>
+  <title>{title} — Pranav Purwar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>{title}</h1>
-      <div><time datetime="{date}">{date}</time></div>
-    </header>
-    <main>
-{content}
+  <div class="container">
+    <nav class="nav-header">
+      <a href="/" class="nav-brand">
+        <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>
+        <div>
+          <div class="brand-title">Pranav Purwar</div>
+          <div class="brand-handle">@invokevirtual</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/blog/index.html" class="nav-link">Blog</a>
+        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>
+        <a href="/donate.html" class="btn btn-primary">Sponsor</a>
+      </div>
+    </nav>
+    <main class="content">
+      <article class="project-card">
+        <header class="card-top">
+          <div>
+            <h1 style="font-size: 24px; margin-bottom: 6px;">{title}</h1>
+            <div class="project-date"><time datetime="{date}">{date}</time></div>
+          </div>
+        </header>
+        <section class="project-summary" style="margin-top: 16px;">
+          {content}
+        </section>
+      </article>
+      <div style="margin-top: 24px;">
+        <a href="/blog/index.html" class="btn btn-outline">← Back to blog</a>
+      </div>
     </main>
     <footer>
-      <a href="/blog/index.html">Back to blog</a>
+      <div>
+        © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
+      </div>
+      <div class="footer-links">
+        <a href="/cv.pdf" download>Download CV (PDF)</a>
+        <a href="/donate.html">Sponsor / Donate</a>
+        <a href="mailto:purwarpranav80@gmail.com">Contact</a>
+      </div>
     </footer>
   </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>'''
 

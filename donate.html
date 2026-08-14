@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate | invokevirtual</title>
+  <title>Sponsor / Donate | Pranav Purwar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body class="donate-page">
-  <div class="bg-grid"></div>  
 
   <div class="container">
     <nav class="nav-header">
@@ -31,16 +31,16 @@
     </nav>
 
     <div class="header">
-      <h1>Support.</h1>
-      <p>Help fund the open-source mission.</p>
+      <h1>Support & Sponsor</h1>
+      <p>Help fund independent systems and open-source tooling.</p>
     </div>
 
-    <p class="lead">If you find my open-source work useful, consider supporting development and maintenance. Contributions fund ongoing development, CI infrastructure, and free community resources.</p>
+    <p class="lead">If you find my open-source work useful, consider supporting ongoing development. Contributions fund compiler ports, CI infrastructure, and free developer tools for the community.</p>
 
     <div class="cta-row">
       <a href="https://opencollective.com/invokevirtual" target="_blank" class="primary-action">
         <div class="icon-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="5" width="20" height="14" rx="2" />
             <line x1="2" y1="10" x2="22" y2="10" />
           </svg>
@@ -49,44 +49,43 @@
           <strong>Card or PayPal</strong>
           <span>Instant via Open Collective</span>
         </div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5">
           <path d="M9 18l6-6-6-6" />
         </svg>
       </a>
 
       <a href="https://github.com/sponsors/PranavPurwar" target="_blank" class="primary-action">
         <div class="icon-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="5" width="20" height="14" rx="2" />
-            <line x1="2" y1="10" x2="22" y2="10" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
         </div>
         <div class="primary-info">
           <strong>GitHub Sponsors</strong>
-          <span>Support via GitHub</span>
+          <span>Monthly or one-time via GitHub</span>
         </div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5">
           <path d="M9 18l6-6-6-6" />
         </svg>
       </a>
     </div>
 
-    <div class="divider">Crypto & UPI</div>
+    <div class="divider">Direct Transfer & Crypto</div>
 
-    <div class="terminal">
+    <div class="project-card" style="padding: 20px;">
       <div class="tabs">
-        <div class="tab" data-id="upi" onclick="switchTab('upi', this)">UPI</div>
-        <div class="tab" data-id="btc" onclick="switchTab('btc', this)">BTC</div>
-        <div class="tab" data-id="eth" onclick="switchTab('eth', this)">ETH</div>
-        <div class="tab" data-id="sol" onclick="switchTab('sol', this)">SOL</div>
-        <div class="tab" data-id="xmr" onclick="switchTab('xmr', this)">XMR</div>
-        <div class="tab" data-id="poly" onclick="switchTab('poly', this)">POLY</div>
+        <button type="button" class="tab" data-id="upi" onclick="switchTab('upi', this)">UPI</button>
+        <button type="button" class="tab" data-id="btc" onclick="switchTab('btc', this)">BTC</button>
+        <button type="button" class="tab" data-id="eth" onclick="switchTab('eth', this)">ETH</button>
+        <button type="button" class="tab" data-id="sol" onclick="switchTab('sol', this)">SOL</button>
+        <button type="button" class="tab" data-id="xmr" onclick="switchTab('xmr', this)">XMR</button>
+        <button type="button" class="tab" data-id="poly" onclick="switchTab('poly', this)">POLY</button>
       </div>
 
       <div class="display-well">
         <div id="qr-wrap" class="qr-section">
           <div class="qr-frame">
-            <img id="qr-img" src="" alt="QR">
+            <img id="qr-img" src="" alt="QR Code">
           </div>
         </div>
         <span class="net-tag" id="net-label">Network</span>
@@ -96,6 +95,17 @@
       <a href="upi://pay?pa=pranavpurwar@fam&pn=Pranav%20Purwar" id="upi-btn" class="btn-upi">Open UPI App</a>
       <button class="btn-copy" onclick="copyAction(this)">Copy Address</button>
     </div>
+
+    <footer>
+      <div>
+        © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
+      </div>
+      <div class="footer-links">
+        <a href="/cv.pdf" download>Download CV (PDF)</a>
+        <a href="/donate.html">Sponsor / Donate</a>
+        <a href="mailto:purwarpranav80@gmail.com">Contact</a>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -126,11 +136,11 @@
       const text = document.getElementById('addr-box').innerText;
       const original = btn.innerText;
       navigator.clipboard.writeText(text).then(() => {
-        btn.innerText = 'Copied';
-        setTimeout(() => btn.innerText = original, 1400);
+        btn.innerText = 'Copied to Clipboard';
+        setTimeout(() => btn.innerText = original, 1600);
       }).catch(() => {
-        btn.innerText = 'Copy failed';
-        setTimeout(() => btn.innerText = original, 1400);
+        btn.innerText = 'Copy Failed';
+        setTimeout(() => btn.innerText = original, 1600);
       });
     }
 
@@ -139,19 +149,9 @@
       const def = isIN ? 'upi' : 'btc';
       const preferred = document.querySelector(`[data-id="${def}"]`) || document.querySelector('.tab');
       if(preferred) switchTab(preferred.dataset.id || def, preferred);
+      document.getElementById('year').textContent = new Date().getFullYear();
     };
   </script>
-  <footer>
-    <div>
-      © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
-    </div>
-    <div class="footer-links">
-      <a href="/cv.pdf" download>Download CV (PDF)</a>
-      <a href="/donate.html">Sponsor / Donate</a>
-      <a href="mailto:purwarpranav80@gmail.com">Contact</a>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 
 </html>

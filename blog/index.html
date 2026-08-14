@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Blog — Pranav Purwar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="bg-grid"></div>
   <div class="container">
     <nav class="nav-header">
       <a href="/" class="nav-brand">
@@ -26,9 +28,9 @@
     </nav>
     <section class="hero-section">
       <h1 class="hero-title">Blog</h1>
-      <p class="hero-subtitle">I've been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>
+      <p class="hero-subtitle">Notes and technical deep-dives on Android internals, JVM runtime engineering, and compiler toolchains.</p>
     </section>
-    <section id="posts">
+    <section id="posts" class="section">
       <div class="projects-grid">
         <article class="project-card">
           <div class="card-top">
@@ -37,6 +39,9 @@
                 <span class="project-name"><a href="/posts/2026-08-03-hello-world.html">Hello — Pranav Purwar</a></span>
               </div>
               <div class="project-date"><time datetime="2026">2026</time></div>
+            </div>
+            <div class="card-links">
+              <a href="/posts/2026-08-03-hello-world.html" class="icon-link">↗</a>
             </div>
           </div>
           <p class="project-summary">Notes on Android, JVM, and modern software.</p>

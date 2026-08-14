@@ -3,7 +3,7 @@
 """
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(__file__))
 POSTS_DIR = os.path.join(ROOT, 'posts')
 POSTS_MD = os.path.join(ROOT, 'posts_md')
@@ -43,10 +43,12 @@ def regen_index(posts):
         '  <meta charset="utf-8">',
         '  <meta name="viewport" content="width=device-width,initial-scale=1">',
         '  <title>Blog — Pranav Purwar</title>',
+        '  <link rel="preconnect" href="https://fonts.googleapis.com">',
+        '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+        '  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">',
         '  <link rel="stylesheet" href="/styles.css">',
         '</head>',
         '<body>',
-        '  <div class="bg-grid"></div>',
         '  <div class="container">',
         '    <nav class="nav-header">',
         '      <a href="/" class="nav-brand">',
@@ -65,20 +67,23 @@ def regen_index(posts):
         '    </nav>',
         '    <section class="hero-section">',
         '      <h1 class="hero-title">Blog</h1>',
-        '      <p class="hero-subtitle">I\'ve been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>',
+        '      <p class="hero-subtitle">Notes and technical deep-dives on Android internals, JVM runtime engineering, and compiler toolchains.</p>',
         '    </section>',
-        '    <section id="posts">',
+        '    <section id="posts" class="section">',
         '      <div class="projects-grid">'
     ]
     for p in posts:
         lines.append('        <article class="project-card">')
         lines.append('          <div class="card-top">')
         lines.append('            <div>')
-        lines.append(f'              <div class="project-meta">')
+        lines.append('              <div class="project-meta">')
         lines.append(f'                <span class="project-name"><a href="{p["file"]}">{p["title"]}</a></span>')
         lines.append('              </div>')
         if p.get('date'):
             lines.append(f'              <div class="project-date"><time datetime="{p["date"]}">{p["date"]}</time></div>')
+        lines.append('            </div>')
+        lines.append('            <div class="card-links">')
+        lines.append(f'              <a href="{p["file"]}" class="icon-link">↗</a>')
         lines.append('            </div>')
         lines.append('          </div>')
         lines.append('          <p class="project-summary">Notes on Android, JVM, and modern software.</p>')
@@ -108,7 +113,7 @@ def regen_index(posts):
 
 def regen_rss(posts):
     os.makedirs(os.path.dirname(RSS_OUT), exist_ok=True)
-    now = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+    now = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')
     lines = [
         '<?xml version="1.0" encoding="UTF-8" ?>',
         '<rss version="2.0"><channel>',

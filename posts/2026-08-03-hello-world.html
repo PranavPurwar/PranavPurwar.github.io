@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Hello — Pranav Purwar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
-  <div class="bg-grid"></div>
 
   <div class="container">
 
@@ -33,24 +34,29 @@
       <article class="project-card">
         <header class="card-top">
           <div>
-            <h1>Hello — Starter post</h1>
+            <h1 style="font-size: 22px; margin-bottom: 6px;">Hello — Starter post</h1>
             <div class="project-date"><time datetime="2026-08-03">2026-08-03</time></div>
           </div>
         </header>
 
-        <section class="card-body">
+        <section class="project-summary" style="margin-top: 16px;">
           <p>Hello world. I've been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>
         </section>
       </article>
 
-      <footer>
-        <a href="/blog/index.html">Back to blog</a>
-      </footer>
+      <div style="margin-top: 24px;">
+        <a href="/blog/index.html" class="btn btn-outline">← Back to blog</a>
+      </div>
     </main>
 
-    <footer class="site-footer">
+    <footer>
       <div>
         © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
+      </div>
+      <div class="footer-links">
+        <a href="/cv.pdf" download>Download CV (PDF)</a>
+        <a href="/donate.html">Sponsor / Donate</a>
+        <a href="mailto:purwarpranav80@gmail.com">Contact</a>
       </div>
     </footer>
 
