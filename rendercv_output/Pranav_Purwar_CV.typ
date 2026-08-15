@@ -110,9 +110,13 @@ Systems Engineer working on #strong[JVM internals], #strong[compilers], #strong[
 
     - #strong[Rootless Linux Environment]: Built a full Arch Linux ARM runtime on Android without root or proot using a custom `glibc` runtime and `LD_PRELOAD` shims to intercept `execve`\/`execvp`\/`posix_spawn`, DNS, and filesystem syscalls.
 
+    - #strong[Recursive Process Sandboxing]: Intercepted process creation chains ensuring child processes (e.g. Gradle daemons, Cargo workers) automatically inherit the shim environment and sandbox boundaries.
+
     - #strong[Terminal & Package Management]: Built an integrated PTY terminal emulator with process group signal handling (`SIGINT`\/Ctrl+C propagation) and native Arch Linux `pacman` package manager support.
 
-    - #strong[LSP & Plugin System]: Built a modular plugin architecture with in-app marketplace loading and on-device Language Server Protocol (LSP) diagnostics across #strong[11+ languages] (Rust, Java, Kotlin, Scala, Go, C\/C++, Python, etc.).
+    - #strong[Language & Project Toolchains]: Built a plugin marketplace delivering complete language, project build system (Gradle, Cargo, Maven), and on-device Language Server Protocol (LSP) support across #strong[11+ languages] (Rust, Java, Kotlin, Scala, Go, C\/C++, Python, etc.).
+
+    - #strong[Plugin Architecture]: Engineered dynamic plugin loading for language definitions, custom build commands, and syntax schemas decoupled from core app releases.
 
   ],
   [
@@ -186,7 +190,7 @@ Systems Engineer working on #strong[JVM internals], #strong[compilers], #strong[
 
 #regular-entry(
   [
-    #strong[Reef | Creator & Sole Developer]
+    #strong[Reef | Creator]
 
     - Built an open-source Android screen time & productivity app (#strong[320+ stars], on IzzyOnDroid) with #strong[Jetpack Compose] and Material 3 Expressive.
 

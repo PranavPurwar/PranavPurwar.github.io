@@ -100,14 +100,15 @@
           <div class="project-meta-row">
             <span class="project-role">Creator &amp; Architect</span>
           </div>
-          <p class="project-desc">A desktop-class, general-purpose IDE for Android powered by a self-contained Linux environment. Hosts genuine compilers and build systems (Gradle, Cargo, Maven), Language Server Protocol (LSP) diagnostics across 11+ languages, an integrated PTY terminal with pacman package management, and an extensible in-app plugin marketplace.</p>
+          <p class="project-desc">An Android IDE running a rootless Arch Linux ARM environment via a custom glibc runtime and LD_PRELOAD shims. Features a plugin marketplace providing full language support, project build toolchains (Gradle, Cargo, Maven), and on-device LSP diagnostics across 11+ languages.</p>
           <div class="project-tags">
             <span class="tag">Android IDE</span>
-            <span class="tag">Linux Environment (Arch ARM)</span>
-            <span class="tag">LSP Architecture</span>
-            <span class="tag">Plugin Marketplace</span>
+            <span class="tag">Arch Linux (glibc)</span>
+            <span class="tag">LD_PRELOAD</span>
+            <span class="tag">Project Toolchains (Gradle/Cargo)</span>
+            <span class="tag">LSP</span>
             <span class="tag">PTY Terminal</span>
-            <span class="tag">Build Toolchains</span>
+            <span class="tag">Plugins</span>
           </div>
         </a>
 
@@ -116,20 +117,20 @@
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">Bryte AI Platform <span class="arrow-icon">↗</span></span>
-              <span class="project-badge">Kotlin Multiplatform · GraphRAG</span>
+              <span class="project-badge">Kotlin Multiplatform</span>
             </div>
             <span class="project-date">Sept 2024 — Present</span>
           </div>
           <div class="project-meta-row">
             <span class="project-role">Creator &amp; Lead Developer</span>
           </div>
-          <p class="project-desc">Kotlin Multiplatform backend infrastructure for multimodal document ingestion (PDF OCR, YouTube transcripts, web pages). Features Neo4j GraphRAG with 1024-dim vector indexing, a native Kotlin port of the FSRS v4 spaced repetition algorithm, JetBrains Koog agent workflows, and real-time streaming over kotlinx.rpc WebSockets.</p>
+          <p class="project-desc">Kotlin Multiplatform backend (Ktor CIO) ingesting PDFs, YouTube transcripts, and web pages into structured notes. Uses Neo4j GraphRAG with 1024-dim vector indexing, a native Kotlin port of the FSRS v4 algorithm, and streaming via kotlinx.rpc WebSockets.</p>
           <div class="project-tags">
             <span class="tag">Kotlin Multiplatform</span>
-            <span class="tag">GraphRAG / Neo4j</span>
+            <span class="tag">Ktor</span>
+            <span class="tag">Neo4j (GraphRAG)</span>
             <span class="tag">FSRS v4</span>
-            <span class="tag">AI Agents (Koog)</span>
-            <span class="tag">Vector Search</span>
+            <span class="tag">JetBrains Koog</span>
             <span class="tag">kotlinx.rpc</span>
           </div>
         </a>
@@ -146,13 +147,13 @@
           <div class="project-meta-row">
             <span class="project-role">Lead Systems Developer</span>
           </div>
-          <p class="project-desc">Ported javac (OpenJDK 27 EA) and kotlinc (2.4+) to the Android Runtime (ART). Rewrote platform resolution via custom ZipFileSystem for ct.sym to bypass Android's restricted NIO, and engineered memory reclamation using HiddenApiBypass (NioUtils.freeDirectBuffer) to prevent fatal OOM crashes during memory-mapped JAR parsing.</p>
+          <p class="project-desc">Ported javac (OpenJDK 27 EA, Java 26 support) and kotlinc (2.4/2.5) to run directly on the Android Runtime (ART). Bypassed restricted NIO via a custom ZipFileSystem for ct.sym and used HiddenApi Bypass to invoke NioUtils.freeDirectBuffer, fixing off-heap OOM crashes.</p>
           <div class="project-tags">
             <span class="tag">OpenJDK (javac)</span>
             <span class="tag">kotlinc</span>
             <span class="tag">Android Runtime (ART)</span>
             <span class="tag">ZipFileSystem</span>
-            <span class="tag">Hidden API Bypass</span>
+            <span class="tag">HiddenApi Bypass</span>
             <span class="tag">Memory Management</span>
           </div>
         </a>
@@ -169,11 +170,11 @@
           <div class="project-meta-row">
             <span class="project-role">JetBrains Contributor</span>
           </div>
-          <p class="project-desc">Upstream contribution to the official JetBrains Kotlin compiler resolving a critical JAR filesystem memory leak, optimizing stability and performance for fast JAR file system operations under intensive compiler runs.</p>
+          <p class="project-desc">Fixed an off-heap direct buffer memory leak in the official JetBrains Kotlin compiler within ZipImplementation when using -Xuse-fast-jar-file-system.</p>
           <div class="project-tags">
             <span class="tag">Kotlin Compiler</span>
             <span class="tag">JetBrains Upstream</span>
-            <span class="tag">Memory Reclamation</span>
+            <span class="tag">Memory Leak Fix</span>
             <span class="tag">JAR FileSystem</span>
           </div>
         </a>
@@ -190,12 +191,11 @@
           <div class="project-meta-row">
             <span class="project-role">Core Team</span>
           </div>
-          <p class="project-desc">Core team developer for an open-source mobile IDE powered by the ported Kotlin/Java compiler toolchains. Added Java 9/11+ compilation support, integrated Google's R8/D8 code shrinker to reduce output APK sizes by ~40%, and built an on-device compile-time ViewBinding generator.</p>
+          <p class="project-desc">Core team member for an open-source Android IDE with 1.7k+ stars. Added Java 9/11+ compilation support, integrated Google's R8/D8 code shrinker to reduce output APK sizes by ~40%, and built an on-device compile-time ViewBinding generator.</p>
           <div class="project-tags">
-            <span class="tag">Mobile IDE</span>
-            <span class="tag">Build Pipelines</span>
+            <span class="tag">Android IDE</span>
             <span class="tag">R8 / D8 Shrinker</span>
-            <span class="tag">ViewBinding Generator</span>
+            <span class="tag">ViewBinding</span>
             <span class="tag">Java 9/11+</span>
             <span class="tag">ART Toolchain</span>
           </div>
@@ -211,16 +211,16 @@
             <span class="project-date">Sept 2024 — Present</span>
           </div>
           <div class="project-meta-row">
-            <span class="project-role">Creator &amp; Sole Developer</span>
+            <span class="project-role">Creator</span>
           </div>
-          <p class="project-desc">An open-source Android screen time and focus app built with Jetpack Compose and Material 3 Expressive. Features accurate per-app usage tracking across fragmented OEM ROMs (MIUI, OneUI), Pomodoro focus sessions, and real-time app/website blocking via Accessibility and Notification Listener services.</p>
+          <p class="project-desc">An open-source Android screen time and focus app built with Jetpack Compose and Material 3 Expressive. Features accurate per-app usage tracking across fragmented OEM ROMs (MIUI, OneUI), Pomodoro timers, and real-time app/website blocking via Accessibility and Notification Listener services.</p>
           <div class="project-tags">
             <span class="tag">Jetpack Compose</span>
             <span class="tag">Material 3 Expressive</span>
             <span class="tag">Android Internals</span>
             <span class="tag">OEM Normalization</span>
             <span class="tag">Accessibility Services</span>
-            <span class="tag">IzzyOnDroid / F-Droid</span>
+            <span class="tag">IzzyOnDroid</span>
           </div>
         </a>
 

@@ -57,10 +57,16 @@
         <p><strong>Rootless Linux Environment</strong>: Built a full Arch Linux ARM runtime on Android without root or proot using a custom <code>glibc</code> runtime and <code>LD_PRELOAD</code> shims to intercept <code>execve</code>/<code>execvp</code>/<code>posix_spawn</code>, DNS, and filesystem syscalls.</p>
         </li>
         <li>
+        <p><strong>Recursive Process Sandboxing</strong>: Intercepted process creation chains ensuring child processes (e.g. Gradle daemons, Cargo workers) automatically inherit the shim environment and sandbox boundaries.</p>
+        </li>
+        <li>
         <p><strong>Terminal &amp; Package Management</strong>: Built an integrated PTY terminal emulator with process group signal handling (<code>SIGINT</code>/Ctrl+C propagation) and native Arch Linux <code>pacman</code> package manager support.</p>
         </li>
         <li>
-        <p><strong>LSP &amp; Plugin System</strong>: Built a modular plugin architecture with in-app marketplace loading and on-device Language Server Protocol (LSP) diagnostics across <strong>11+ languages</strong> (Rust, Java, Kotlin, Scala, Go, C/C++, Python, etc.).</p>
+        <p><strong>Language &amp; Project Toolchains</strong>: Built a plugin marketplace delivering complete language, project build system (Gradle, Cargo, Maven), and on-device Language Server Protocol (LSP) support across <strong>11+ languages</strong> (Rust, Java, Kotlin, Scala, Go, C/C++, Python, etc.).</p>
+        </li>
+        <li>
+        <p><strong>Plugin Architecture</strong>: Engineered dynamic plugin loading for language definitions, custom build commands, and syntax schemas decoupled from core app releases.</p>
         </li>
         </ul>
         <h2><strong>Bryte AI Platform (Open-Source) | Creator &amp; Lead Developer</strong></h2>
@@ -111,7 +117,7 @@
         <p>Engineered on-device compile-time <strong>ViewBinding generator</strong> from XML layouts and recursive AAR/JAR dependency resolver.</p>
         </li>
         </ul>
-        <h2><strong>Reef | Creator &amp; Sole Developer</strong></h2>
+        <h2><strong>Reef | Creator</strong></h2>
         <p><a href="https://github.com/aload0/Reef"><strong>GitHub</strong></a></p>
         <p>Sept 2024 – present</p>
         <ul>
