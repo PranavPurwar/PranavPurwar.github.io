@@ -10,9 +10,9 @@
   --border-hover: rgba(255, 255, 255, 0.16);
   --border-active: rgba(255, 255, 255, 0.24);
 
-  --text-main: #f3f3f3;
-  --text-muted: #8e8e93;
-  --text-dim: #5c5c62;
+  --text-main: #ffffff;
+  --text-muted: #c8c8cf;
+  --text-dim: #94949e;
 
   --accent-sky: #38bdf8;
   --accent-emerald: #10b981;
