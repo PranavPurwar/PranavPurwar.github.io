@@ -9,7 +9,7 @@
   <!-- Primary Meta Tags -->
   <meta name="title" content="Pranav Purwar | Systems Engineer">
   <meta name="description" content="Systems Engineer specializing in JVM internals, compiler toolchains, AI infrastructure, and Android OS-level virtualization. Creator of Cosmic IDE & Bryte AI Platform.">
-  <meta name="keywords" content="Pranav Purwar, Systems Engineer, JVM, Kotlin, OpenJDK, Android, Cosmic IDE, Bryte AI, GraphRAG, Compilers">
+  <meta name="keywords" content="Pranav Purwar, Systems Engineer, JVM, Kotlin, OpenJDK, Android, Cosmic IDE, Bryte AI, GraphRAG, Compilers, ART">
   <meta name="author" content="Pranav Purwar">
 
   <!-- Open Graph / Facebook -->
@@ -54,7 +54,7 @@
       <h1 class="hero-title">Systems Engineer</h1>
 
       <p class="hero-subtitle">
-        Specializing in <strong>JVM internals</strong>, <strong>compiler toolchains</strong>, <strong>AI infrastructure</strong>, and <strong>Android runtime virtualization</strong>. Creator of Cosmic IDE and core contributor to mobile toolchains.
+        Specializing in <strong>JVM internals</strong>, <strong>compiler toolchains</strong>, <strong>AI infrastructure</strong>, and <strong>Android OS-level virtualization</strong>. Creator of <strong>Cosmic IDE</strong> and <strong>Bryte AI Platform</strong>; core contributor to developer tools with <strong>1.2M+ downloads</strong>.
       </p>
 
       <div class="hero-actions">
@@ -89,23 +89,25 @@
       <div class="projects-feed">
 
         <!-- Cosmic IDE -->
-        <a href="https://github.com/Cosmic-IDE/Cosmic-IDE" target="_blank" class="project-item">
+        <a href="https://github.com/aload0/Cosmic-IDE" target="_blank" class="project-item">
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">Cosmic IDE <span class="arrow-icon">↗</span></span>
-              <span class="project-badge stats">690+ stars · 75k+ downloads</span>
+              <span class="project-badge stats">700+ stars · 100+ forks</span>
             </div>
-            <span class="project-date">2021 — Present</span>
+            <span class="project-date">Aug 2021 — Present</span>
           </div>
           <div class="project-meta-row">
-            <span class="project-role">Creator &amp; Lead Developer</span>
+            <span class="project-role">Creator &amp; Architect</span>
           </div>
-          <p class="project-desc">Desktop-class development environment on Android featuring an on-device Linux runtime, integrated terminal, LD_PRELOAD virtualization, and plugin architecture for LSP tooling.</p>
+          <p class="project-desc">A desktop-class, general-purpose IDE for Android powered by a self-contained Linux environment. Hosts genuine compilers and build systems (Gradle, Cargo, Maven), Language Server Protocol (LSP) diagnostics across 11+ languages, an integrated PTY terminal with pacman package management, and an extensible in-app plugin marketplace.</p>
           <div class="project-tags">
-            <span class="tag">OS Virtualization</span>
-            <span class="tag">LD_PRELOAD</span>
-            <span class="tag">LSP</span>
-            <span class="tag">Android Internals</span>
+            <span class="tag">Android IDE</span>
+            <span class="tag">Linux Environment (Arch ARM)</span>
+            <span class="tag">LSP Architecture</span>
+            <span class="tag">Plugin Marketplace</span>
+            <span class="tag">PTY Terminal</span>
+            <span class="tag">Build Toolchains</span>
           </div>
         </a>
 
@@ -114,19 +116,21 @@
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">Bryte AI Platform <span class="arrow-icon">↗</span></span>
-              <span class="project-badge">Kotlin Multiplatform</span>
+              <span class="project-badge">Kotlin Multiplatform · GraphRAG</span>
             </div>
-            <span class="project-date">2024 — Present</span>
+            <span class="project-date">Sept 2024 — Present</span>
           </div>
           <div class="project-meta-row">
-            <span class="project-role">Creator &amp; Systems Developer</span>
+            <span class="project-role">Creator &amp; Lead Developer</span>
           </div>
-          <p class="project-desc">High-throughput backend for multimodal document ingestion, GraphRAG knowledge synthesis, vector indexing, and a native FSRS v4 spaced repetition engine.</p>
+          <p class="project-desc">Kotlin Multiplatform backend infrastructure for multimodal document ingestion (PDF OCR, YouTube transcripts, web pages). Features Neo4j GraphRAG with 1024-dim vector indexing, a native Kotlin port of the FSRS v4 spaced repetition algorithm, JetBrains Koog agent workflows, and real-time streaming over kotlinx.rpc WebSockets.</p>
           <div class="project-tags">
-            <span class="tag">GraphRAG</span>
-            <span class="tag">Kotlin</span>
+            <span class="tag">Kotlin Multiplatform</span>
+            <span class="tag">GraphRAG / Neo4j</span>
+            <span class="tag">FSRS v4</span>
+            <span class="tag">AI Agents (Koog)</span>
             <span class="tag">Vector Search</span>
-            <span class="tag">AI Infrastructure</span>
+            <span class="tag">kotlinx.rpc</span>
           </div>
         </a>
 
@@ -135,18 +139,21 @@
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">OpenJDK &amp; Kotlin Compiler Ports <span class="arrow-icon">↗</span></span>
+              <span class="project-badge">OpenJDK 27 EA · kotlinc 2.4+</span>
             </div>
-            <span class="project-date">2023 — Present</span>
+            <span class="project-date">Sept 2023 — Present</span>
           </div>
           <div class="project-meta-row">
             <span class="project-role">Lead Systems Developer</span>
           </div>
-          <p class="project-desc">Patched OpenJDK (javac) and Kotlin compiler toolchains running on Android/ART, enabling reliable on-device compilation and build pipelines for mobile IDEs.</p>
+          <p class="project-desc">Ported javac (OpenJDK 27 EA) and kotlinc (2.4+) to the Android Runtime (ART). Rewrote platform resolution via custom ZipFileSystem for ct.sym to bypass Android's restricted NIO, and engineered memory reclamation using HiddenApiBypass (NioUtils.freeDirectBuffer) to prevent fatal OOM crashes during memory-mapped JAR parsing.</p>
           <div class="project-tags">
-            <span class="tag">OpenJDK</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">ART</span>
-            <span class="tag">Toolchains</span>
+            <span class="tag">OpenJDK (javac)</span>
+            <span class="tag">kotlinc</span>
+            <span class="tag">Android Runtime (ART)</span>
+            <span class="tag">ZipFileSystem</span>
+            <span class="tag">Hidden API Bypass</span>
+            <span class="tag">Memory Management</span>
           </div>
         </a>
 
@@ -154,19 +161,20 @@
         <a href="https://github.com/JetBrains/kotlin/pull/5146" target="_blank" class="project-item">
           <div class="project-header">
             <div class="project-title-group">
-              <span class="project-name">Kotlin Compiler (JetBrains) <span class="arrow-icon">↗</span></span>
-              <span class="project-badge stats">PR #5146</span>
+              <span class="project-name">Kotlin Compiler Upstream PR <span class="arrow-icon">↗</span></span>
+              <span class="project-badge stats">JetBrains/kotlin #5146</span>
             </div>
             <span class="project-date">Nov 2023</span>
           </div>
           <div class="project-meta-row">
-            <span class="project-role">Upstream Contributor</span>
+            <span class="project-role">JetBrains Contributor</span>
           </div>
-          <p class="project-desc">Upstream contribution to the official Kotlin compiler resolving a critical JAR filesystem memory leak during intensive compiler runs.</p>
+          <p class="project-desc">Upstream contribution to the official JetBrains Kotlin compiler resolving a critical JAR filesystem memory leak, optimizing stability and performance for fast JAR file system operations under intensive compiler runs.</p>
           <div class="project-tags">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Compilers</span>
-            <span class="tag">Memory Management</span>
+            <span class="tag">Kotlin Compiler</span>
+            <span class="tag">JetBrains Upstream</span>
+            <span class="tag">Memory Reclamation</span>
+            <span class="tag">JAR FileSystem</span>
           </div>
         </a>
 
@@ -175,18 +183,21 @@
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">Sketchware‑Pro <span class="arrow-icon">↗</span></span>
-              <span class="project-badge stats">1.6k+ stars · 1.1M+ downloads</span>
+              <span class="project-badge stats">1.7k+ stars · 100k+ MAU</span>
             </div>
-            <span class="project-date">2021 — Present</span>
+            <span class="project-date">Aug 2021 — Present</span>
           </div>
           <div class="project-meta-row">
             <span class="project-role">Core Team</span>
           </div>
-          <p class="project-desc">Mobile development IDE and build infrastructure focused on on-device visual and source-level development workflows for Android.</p>
+          <p class="project-desc">Core team developer for an open-source mobile IDE powered by the ported Kotlin/Java compiler toolchains. Added Java 9/11+ compilation support, integrated Google's R8/D8 code shrinker to reduce output APK sizes by ~40%, and built an on-device compile-time ViewBinding generator.</p>
           <div class="project-tags">
             <span class="tag">Mobile IDE</span>
-            <span class="tag">Build Systems</span>
-            <span class="tag">Gradle</span>
+            <span class="tag">Build Pipelines</span>
+            <span class="tag">R8 / D8 Shrinker</span>
+            <span class="tag">ViewBinding Generator</span>
+            <span class="tag">Java 9/11+</span>
+            <span class="tag">ART Toolchain</span>
           </div>
         </a>
 
@@ -195,17 +206,21 @@
           <div class="project-header">
             <div class="project-title-group">
               <span class="project-name">Reef <span class="arrow-icon">↗</span></span>
+              <span class="project-badge stats">320+ stars · IzzyOnDroid</span>
             </div>
-            <span class="project-date">2024 — Present</span>
+            <span class="project-date">Sept 2024 — Present</span>
           </div>
           <div class="project-meta-row">
-            <span class="project-role">Systems Architect</span>
+            <span class="project-role">Creator &amp; Sole Developer</span>
           </div>
-          <p class="project-desc">Privacy-first digital wellbeing application for Android featuring app blocking, routine automation, and local telemetry analytics.</p>
+          <p class="project-desc">An open-source Android screen time and focus app built with Jetpack Compose and Material 3 Expressive. Features accurate per-app usage tracking across fragmented OEM ROMs (MIUI, OneUI), Pomodoro focus sessions, and real-time app/website blocking via Accessibility and Notification Listener services.</p>
           <div class="project-tags">
-            <span class="tag">Android</span>
-            <span class="tag">Telemetry</span>
-            <span class="tag">Privacy</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Material 3 Expressive</span>
+            <span class="tag">Android Internals</span>
+            <span class="tag">OEM Normalization</span>
+            <span class="tag">Accessibility Services</span>
+            <span class="tag">IzzyOnDroid / F-Droid</span>
           </div>
         </a>
 
@@ -290,9 +305,9 @@
         if(c === 'help'){
           appendText('<span style="color:#38bdf8">help</span>   - view available commands\n<span style="color:#38bdf8">about</span>  - engineer overview & focus\n<span style="color:#38bdf8">skills</span> - core technical domains\n<span style="color:#38bdf8">email</span>  - copy/show contact email\n<span style="color:#38bdf8">clear</span>  - clear terminal output');
         } else if(c === 'about'){
-          appendText('Systems Engineer focused on JVM internals, compiler toolchains, ART, and mobile runtime virtualization.');
+          appendText('Systems Engineer specializing in JVM internals, compiler toolchains, AI infrastructure, and Android OS-level virtualization.');
         } else if(c === 'skills'){
-          appendText('<span style="color:#10b981">Kotlin</span>, <span style="color:#10b981">Compilers (javac/kotlinc)</span>, <span style="color:#10b981">Android Internals</span>, <span style="color:#10b981">OS Virtualization</span>, <span style="color:#10b981">GraphRAG & AI Infra</span>');
+          appendText('<span style="color:#38bdf8">Languages:</span> Kotlin, Java, Python, TypeScript, C, JVM Bytecode, DEX/ART\n<span style="color:#10b981">Compilers & Toolchains:</span> OpenJDK (javac), Kotlin (kotlinc), ART, LSP, Gradle, R8/D8, Hidden API Bypass\n<span style="color:#f59e0b">Systems:</span> glibc, LD_PRELOAD, Process Virtualization, Custom Linkers, Native PTY\n<span style="color:#f43f5e">AI & Backend:</span> GraphRAG (Neo4j), FSRS v4, JetBrains Koog, Ktor, kotlinx.rpc');
         } else if(c === 'email'){
           appendText('purwarpranav80@gmail.com');
         } else if(c === 'name'){

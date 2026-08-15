@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+    </title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-light.min.css"
+        integrity="sha512-Pmhg2i/F7+5+7SsdoUqKeH7UAZoVMYb1sxGOoJ0jWXAEHP0XV2H4CITyK267eHWp2jpj7rtqWNkmEOw1tNyYpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/katex.min.css" integrity="sha384-PDbUeNCuE6bOPudPOgFyIUEy3UJawJVwr3XlGO90FIuf5qNIoTLSgOJo/dC2ZXV/" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/katex.min.js" integrity="sha384-VkqWq8xtm5YQk1BBXczQ8/Sx+DlCzF8cuS43bZwmtVXzRFtyLTqTCdP7MKmKo+KN" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.12/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {delimiters: [{ left: '$$',  right: '$$',  display: false }]});"></script>
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <h1>Pranav Purwar's CV</h1>
+        <ul>
+        <li>Email: <a href="mailto:purwarpranav80@gmail.com">purwarpranav80@gmail.com</a></li>
+        <li>Location: Delhi, India</li>
+        <li>GitHub: <a href="https://github.com/PranavPurwar">PranavPurwar</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/pranavpurwar">pranavpurwar</a></li>
+        </ul>
+        <h1>Summary</h1>
+        <p>Systems Engineer working on <strong>JVM internals</strong>, <strong>compilers</strong>, <strong>AI infrastructure</strong>, and <strong>Android OS virtualization</strong>. Creator of <strong>Cosmic IDE</strong> (<strong>700+ stars</strong>, <strong>100+ forks</strong>), bringing rootless Arch Linux environments to Android, and <strong>Bryte AI Platform</strong> (GraphRAG &amp; FSRS v4 scheduling). Contributor to Android developer tools with <strong>1.2M+ downloads</strong> and <strong>100k+ MAU</strong>.</p>
+        <h1>Experience</h1>
+        <h2><strong>Cosmic IDE | Creator &amp; Architect</strong></h2>
+        <p><a href="https://github.com/aload0/Cosmic-IDE"><strong>GitHub</strong></a></p>
+        <p>Aug 2021 – present</p>
+        <ul>
+        <li>
+        <p><strong>Rootless Linux Environment</strong>: Built a full Arch Linux ARM runtime on Android without root or proot using a custom <code>glibc</code> runtime and <code>LD_PRELOAD</code> shims to intercept <code>execve</code>/<code>execvp</code>/<code>posix_spawn</code>, DNS, and filesystem syscalls.</p>
+        </li>
+        <li>
+        <p><strong>Terminal &amp; Package Management</strong>: Built an integrated PTY terminal emulator with process group signal handling (<code>SIGINT</code>/Ctrl+C propagation) and native Arch Linux <code>pacman</code> package manager support.</p>
+        </li>
+        <li>
+        <p><strong>LSP &amp; Plugin System</strong>: Built a modular plugin architecture with in-app marketplace loading and on-device Language Server Protocol (LSP) diagnostics across <strong>11+ languages</strong> (Rust, Java, Kotlin, Scala, Go, C/C++, Python, etc.).</p>
+        </li>
+        </ul>
+        <h2><strong>Bryte AI Platform (Open-Source) | Creator &amp; Lead Developer</strong></h2>
+        <p><a href="https://github.com/Bryte-Edu/server"><strong>GitHub</strong></a></p>
+        <p>Sept 2024 – present</p>
+        <ul>
+        <li>
+        <p>Built a <strong>Kotlin Multiplatform</strong> backend (Ktor CIO) ingesting PDFs (Mistral OCR), YouTube transcripts (NewPipe extractor), and web pages into structured notes.</p>
+        </li>
+        <li>
+        <p>Implemented <strong>GraphRAG</strong> in Neo4j with <strong>1024-dim vector indexing</strong>, weighted Cypher queries balancing document vs cross-document links, automatic semantic chunk interlinking, and Cohere reranking.</p>
+        </li>
+        <li>
+        <p>Wrote a native Kotlin port of <strong>FSRS v4</strong> (spaced repetition algorithm) to compute card stability, difficulty, and retrievability without external dependencies.</p>
+        </li>
+        <li>
+        <p>Orchestrated multi-step LLM workflows using JetBrains Koog with context compression, plus a streaming Markdown parser with mid-stream table recovery.</p>
+        </li>
+        <li>
+        <p>Streamed generated flashcards and questions in real time using type-safe <strong><code>kotlinx.rpc</code> over WebSockets</strong>, multiplexing multiple services over a single connection.</p>
+        </li>
+        </ul>
+        <h2><strong>OpenJDK &amp; Kotlin Compiler Ports (Android)</strong></h2>
+        <p><a href="https://github.com/PranavPurwar/javac-android"><strong>OpenJDK</strong></a> | <a href="https://github.com/PranavPurwar/kotlinc-android"><strong>Kotlin</strong></a></p>
+        <p>Sept 2023 – present</p>
+        <ul>
+        <li>
+        <p><strong>Compiler Ports</strong>: Ported <code>javac</code> (OpenJDK 27 EA, Java 26 support) and <code>kotlinc</code> (Kotlin 2.4/2.5) to run directly on Android Runtime (<strong>ART</strong>); published artifacts to JitPack.</p>
+        </li>
+        <li>
+        <p><strong>NIO &amp; Memory Fixes</strong>: Bypassed Android's restricted NIO via custom <code>ZipFileSystem</code> for <code>ct.sym</code>; used HiddenApi Bypass to invoke <code>NioUtils.freeDirectBuffer</code>, fixing fatal off-heap OOM crashes during JAR parsing.</p>
+        </li>
+        <li>
+        <p><strong>Upstream Contribution</strong>: Authored PR <a href="https://github.com/JetBrains/kotlin/pull/5146"><code>JetBrains/kotlin#5146</code></a> fixing a direct-buffer memory leak in <code>ZipImplementation</code> when using <code>-Xuse-fast-jar-file-system</code>.</p>
+        </li>
+        </ul>
+        <h2><strong>Sketchware-Pro | Core Team</strong></h2>
+        <p><a href="https://github.com/Sketchware-Pro/Sketchware-Pro"><strong>GitHub</strong></a></p>
+        <p>Aug 2021 – present</p>
+        <ul>
+        <li>
+        <p>Core team member for Android IDE (<strong>1.7k+ stars</strong>, <strong>670+ forks</strong>, <strong>100k+ MAU</strong>) integrating ported Kotlin/Java compilers.</p>
+        </li>
+        <li>
+        <p>Integrated <strong>R8/D8 Code Shrinker</strong> and added Java 9/11+ compilation pipelines, cutting output APK sizes by <strong>~40%</strong>.</p>
+        </li>
+        <li>
+        <p>Engineered on-device compile-time <strong>ViewBinding generator</strong> from XML layouts and recursive AAR/JAR dependency resolver.</p>
+        </li>
+        </ul>
+        <h2><strong>Reef | Creator &amp; Sole Developer</strong></h2>
+        <p><a href="https://github.com/aload0/Reef"><strong>GitHub</strong></a></p>
+        <p>Sept 2024 – present</p>
+        <ul>
+        <li>
+        <p>Built an open-source Android screen time &amp; productivity app (<strong>320+ stars</strong>, on IzzyOnDroid) with <strong>Jetpack Compose</strong> and Material 3 Expressive.</p>
+        </li>
+        <li>
+        <p>Normalized inconsistent <code>UsageStatsManager</code> events across fragmented OEM ROMs (MIUI, OneUI) to accurately calculate per-app screen time.</p>
+        </li>
+        <li>
+        <p>Implemented real-time app and website blocking, Pomodoro focus timers, and routines using <code>AccessibilityService</code> and <code>NotificationListenerService</code>.</p>
+        </li>
+        </ul>
+        <h1>Skills</h1>
+        <p><strong>Languages:</strong> Kotlin, Java, Python, TypeScript, C, JVM Bytecode, DEX/ART</p>
+        <p><strong>Compiler &amp; Systems:</strong> OpenJDK, kotlinc, ART Runtime, LSP, Gradle, R8/D8, glibc, LD_PRELOAD, Linux Virtualization, ELF/PTY, HiddenApi Bypass</p>
+        <p><strong>Backend &amp; AI Infrastructure:</strong> Ktor, Neo4j, GraphRAG, Cypher, FSRS v4, LLM Agents (Koog), kotlinx.rpc, WebSockets, Mistral AI, Cohere, SSE Streaming</p>
+        <p><strong>Mobile &amp; Platforms:</strong> Android SDK, Jetpack Compose, Kotlin Multiplatform (KMP), Material 3 Expressive, IzzyOnDroid / F-Droid</p>
+    </article>
+</body>
+
+</html>
