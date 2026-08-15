@@ -198,7 +198,7 @@ nav.nav-header {
 }
 
 .hero-title {
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(30px, 4.5vw, 38px);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -207,10 +207,10 @@ nav.nav-header {
 }
 
 .hero-subtitle {
-  font-size: 16px;
+  font-size: 16.5px;
   color: var(--text-muted);
-  font-weight: 400;
-  line-height: 1.65;
+  font-weight: 450;
+  line-height: 1.7;
   margin-bottom: 24px;
 }
 
@@ -230,10 +230,11 @@ nav.nav-header {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--text-dim);
   font-family: var(--font-mono);
-  padding: 6px 10px;
+  padding: 6px 11px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface);
@@ -254,7 +255,7 @@ nav.nav-header {
 }
 
 .section-title {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -274,7 +275,7 @@ nav.nav-header {
 .project-item {
   display: block;
   text-decoration: none;
-  padding: 18px 18px;
+  padding: 20px 20px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   background: transparent;
@@ -302,7 +303,7 @@ nav.nav-header {
 }
 
 .project-name {
-  font-size: 16px;
+  font-size: 17.5px;
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: -0.015em;
@@ -316,7 +317,7 @@ nav.nav-header {
 }
 
 .arrow-icon {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-dim);
   transition: transform 0.15s ease, color 0.15s ease;
 }
@@ -328,24 +329,25 @@ nav.nav-header {
 
 .project-badge {
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--accent-sky);
   background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.18);
-  padding: 1px 7px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 2px 8px;
   border-radius: var(--radius-sm);
 }
 
 .project-badge.stats {
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--border);
 }
 
 .project-date {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text-dim);
   flex-shrink: 0;
   white-space: nowrap;
@@ -355,43 +357,45 @@ nav.nav-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
 }
 
 .project-role {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: #a1a1aa;
 }
 
 .project-desc {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 450;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 10px;
+  line-height: 1.65;
+  margin-bottom: 12px;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
 }
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-dim);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  padding: 2px 7px;
+  font-size: 12px;
+  font-weight: 550;
+  color: #a1a1aa;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 3px 8px;
   border-radius: var(--radius-sm);
   transition: all 0.15s ease;
 }
 
 .project-item:hover .tag {
-  color: var(--text-muted);
-  border-color: var(--border-hover);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 /* Minimal Terminal Widget */
@@ -410,7 +414,8 @@ nav.nav-header {
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--text-dim);
   background: rgba(255, 255, 255, 0.015);
 }
@@ -427,8 +432,9 @@ nav.nav-header {
   overflow-y: auto;
   padding: 14px;
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  line-height: 1.55;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
   color: var(--text-muted);
   background: var(--bg);
 }
@@ -446,7 +452,7 @@ nav.nav-header {
   color: var(--accent-sky);
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .terminal-input-row input {
@@ -456,7 +462,8 @@ nav.nav-header {
   outline: none;
   color: var(--text-main);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 13.5px;
+  font-weight: 500;
 }
 
 /* Footer */
