@@ -6,7 +6,7 @@
   <title>Blog — Pranav Purwar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -14,38 +14,34 @@
     <nav class="nav-header">
       <a href="/" class="nav-brand">
         <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>
-        <div>
-          <div class="brand-title">Pranav Purwar</div>
-          <div class="brand-handle">@invokevirtual</div>
+        <div class="brand-meta">
+          <span class="brand-title">Pranav Purwar</span>
+          <span class="brand-handle">@invokevirtual</span>
         </div>
       </a>
       <div class="nav-links">
         <a href="/" class="nav-link">Home</a>
         <a href="/blog/index.html" class="nav-link">Blog</a>
-        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>
+        <a href="/cv.pdf" class="btn" download>CV</a>
         <a href="/donate.html" class="btn btn-primary">Sponsor</a>
       </div>
     </nav>
-    <section class="hero-section">
+    <div class="hero-section">
       <h1 class="hero-title">Blog</h1>
-      <p class="hero-subtitle">Notes and technical deep-dives on Android internals, JVM runtime engineering, and compiler toolchains.</p>
-    </section>
+      <p class="hero-subtitle">Notes and technical writings on JVM internals, compiler toolchains, ART runtime mechanics, and Android virtualization.</p>
+    </div>
     <section id="posts" class="section">
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name"><a href="/posts/2026-08-03-hello-world.html">Hello — Pranav Purwar</a></span>
-              </div>
-              <div class="project-date"><time datetime="2026">2026</time></div>
-            </div>
-            <div class="card-links">
-              <a href="/posts/2026-08-03-hello-world.html" class="icon-link">↗</a>
-            </div>
+      <div class="section-header">
+        <h2 class="section-title">All Posts</h2>
+      </div>
+      <div class="projects-feed">
+        <a href="/posts/2026-08-03-hello-world.html" class="project-item">
+          <div class="project-header">
+            <span class="project-name">Hello — Starter post — Pranav Purwar <span class="arrow-icon">↗</span></span>
+            <span class="project-date">2026</span>
           </div>
-          <p class="project-summary">Notes on Android, JVM, and modern software.</p>
-        </article>
+          <p class="project-desc">Notes on Android, JVM internals, and systems development.</p>
+        </a>
       </div>
     </section>
     <footer>
@@ -53,8 +49,8 @@
         © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
       </div>
       <div class="footer-links">
-        <a href="/cv.pdf" download>Download CV (PDF)</a>
-        <a href="/donate.html">Sponsor / Donate</a>
+        <a href="/cv.pdf" download>CV</a>
+        <a href="/donate.html">Sponsor</a>
         <a href="mailto:purwarpranav80@gmail.com">Contact</a>
       </div>
     </footer>

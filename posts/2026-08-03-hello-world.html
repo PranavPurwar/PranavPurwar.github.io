@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hello — Pranav Purwar</title>
+  <title>Hello — Starter post — Pranav Purwar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -16,36 +16,34 @@
     <nav class="nav-header">
       <a href="/" class="nav-brand">
         <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>
-        <div>
-          <div class="brand-title">Pranav Purwar</div>
-          <div class="brand-handle">@invokevirtual</div>
+        <div class="brand-meta">
+          <span class="brand-title">Pranav Purwar</span>
+          <span class="brand-handle">@invokevirtual</span>
         </div>
       </a>
 
       <div class="nav-links">
         <a href="/" class="nav-link">Home</a>
         <a href="/blog/index.html" class="nav-link">Blog</a>
-        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>
+        <a href="/cv.pdf" class="btn" download>CV</a>
         <a href="/donate.html" class="btn btn-primary">Sponsor</a>
       </div>
     </nav>
 
-    <main class="content">
-      <article class="project-card">
-        <header class="card-top">
-          <div>
-            <h1 style="font-size: 22px; margin-bottom: 6px;">Hello — Starter post</h1>
-            <div class="project-date"><time datetime="2026-08-03">2026-08-03</time></div>
-          </div>
-        </header>
+    <main>
+      <header style="margin-bottom: 28px;">
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); margin-bottom: 8px;">
+          <time datetime="2026-08-03">August 3, 2026</time>
+        </div>
+        <h1 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: var(--text-main);">Hello — Starter post</h1>
+      </header>
 
-        <section class="project-summary" style="margin-top: 16px;">
-          <p>Hello world. I've been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>
-        </section>
+      <article style="color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 40px;">
+        <p>Hello world. I've been building for the Android and JVM ecosystem since 7th grade. I love working on and creating modern software.</p>
       </article>
 
-      <div style="margin-top: 24px;">
-        <a href="/blog/index.html" class="btn btn-outline">← Back to blog</a>
+      <div>
+        <a href="/blog/index.html" class="btn">← Back to blog</a>
       </div>
     </main>
 
@@ -54,14 +52,14 @@
         © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
       </div>
       <div class="footer-links">
-        <a href="/cv.pdf" download>Download CV (PDF)</a>
-        <a href="/donate.html">Sponsor / Donate</a>
+        <a href="/cv.pdf" download>CV</a>
+        <a href="/donate.html">Sponsor</a>
         <a href="mailto:purwarpranav80@gmail.com">Contact</a>
       </div>
     </footer>
 
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -21,7 +21,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -29,229 +29,209 @@
 
   <div class="container">
 
-    <!-- Navigation Header -->
+    <!-- Top Navigation -->
     <nav class="nav-header">
-      <a href="#" class="nav-brand">
-        <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>
-        <div>
-          <div class="brand-title">Pranav Purwar</div>
-          <div class="brand-handle">@invokevirtual</div>
+      <a href="/" class="nav-brand">
+        <div class="avatar-box">
+          <img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar">
+        </div>
+        <div class="brand-meta">
+          <span class="brand-title">Pranav Purwar</span>
+          <span class="brand-handle">@invokevirtual</span>
         </div>
       </a>
 
       <div class="nav-links">
-        <a href="#experience" class="nav-link">Projects</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="/blog/index.html" class="nav-link">Blog</a>
-        <a href="/cv.pdf" class="btn btn-outline" title="Download CV (PDF)" download>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download CV
-        </a>
-        <a href="donate.html" class="btn btn-primary" title="Support / Sponsor">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          Sponsor
-        </a>
+        <a href="/cv.pdf" class="btn" title="Download CV" download>CV</a>
+        <a href="donate.html" class="btn btn-primary" title="Sponsor">Sponsor</a>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-      <h1 class="hero-title">Pranav Purwar — Systems Engineer</h1>
+      <h1 class="hero-title">Systems Engineer</h1>
 
       <p class="hero-subtitle">
-        Specializing in <strong>JVM internals</strong>, <strong>compiler toolchains</strong>, <strong>AI infrastructure</strong>, and <strong>Android OS-level virtualization</strong>.
+        Specializing in <strong>JVM internals</strong>, <strong>compiler toolchains</strong>, <strong>AI infrastructure</strong>, and <strong>Android runtime virtualization</strong>. Creator of Cosmic IDE and core contributor to mobile toolchains.
       </p>
 
       <div class="hero-actions">
-        <a href="https://github.com/PranavPurwar" target="_blank" class="btn btn-outline">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <a href="https://github.com/PranavPurwar" target="_blank" class="btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
 
-        <a href="https://linkedin.com/in/pranavpurwar" target="_blank" class="btn btn-outline">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="https://linkedin.com/in/pranavpurwar" target="_blank" class="btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           LinkedIn
         </a>
 
-        <button onclick="copyEmail()" class="btn btn-outline" id="emailBtn" title="Click to copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <button onclick="copyEmail()" class="btn" id="emailBtn" title="Click to copy email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           purwarpranav80@gmail.com
         </button>
 
         <span class="location-tag">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Delhi, India
         </span>
       </div>
     </section>
 
-    <!-- Interactive Terminal -->
-    <section id="terminal-top" class="section">
+    <!-- Key Systems & Projects -->
+    <section id="projects" class="section">
       <div class="section-header">
-        <h2 class="section-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-          Terminal
-        </h2>
+        <h2 class="section-title">Selected Systems &amp; Tooling</h2>
       </div>
 
-      <div class="terminal" role="region" aria-label="Interactive terminal">
-        <div class="terminal-header">
-          <span class="terminal-header-title">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-            shell — zsh
-          </span>
-          <span>interactive session</span>
-        </div>
-        <div id="termOutTop" class="terminal-output">Welcome — type `help` for available commands.</div>
-
-        <div class="terminal-input">
-          <input id="termInTop" autocomplete="off" placeholder="Type a command (e.g. help, about, skills) and press Enter" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience & Featured Projects Section -->
-    <section id="experience" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          Experience & Key Systems
-        </h2>
-      </div>
-
-      <div class="projects-grid">
+      <div class="projects-feed">
 
         <!-- Cosmic IDE -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">Cosmic IDE</span>
-                <span class="project-role">Creator & Lead Developer</span>
-                <span class="tag">690+ stars, 75k+ downloads</span>
-              </div>
-              <div class="project-date">Aug 2021 – Present</div>
+        <a href="https://github.com/Cosmic-IDE/Cosmic-IDE" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">Cosmic IDE <span class="arrow-icon">↗</span></span>
+              <span class="project-badge stats">690+ stars · 75k+ downloads</span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/Cosmic-IDE/Cosmic-IDE" target="_blank" class="icon-link" title="GitHub Repository">↗</a>
-            </div>
+            <span class="project-date">2021 — Present</span>
           </div>
-          <p class="project-summary">Cosmic IDE provides a desktop-class development environment on Android — a full Linux runtime, integrated terminal, and plugin-based IDE for on-device builds and LSP tooling.</p>
-          <div class="tag-cloud">
+          <div class="project-meta-row">
+            <span class="project-role">Creator &amp; Lead Developer</span>
+          </div>
+          <p class="project-desc">Desktop-class development environment on Android featuring an on-device Linux runtime, integrated terminal, LD_PRELOAD virtualization, and plugin architecture for LSP tooling.</p>
+          <div class="project-tags">
             <span class="tag">OS Virtualization</span>
             <span class="tag">LD_PRELOAD</span>
             <span class="tag">LSP</span>
+            <span class="tag">Android Internals</span>
           </div>
-        </article>
+        </a>
 
         <!-- Bryte AI Platform -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">Bryte AI Platform</span>
-                <span class="project-role">Creator & Lead Developer</span>
-              </div>
-              <div class="project-date">Sept 2024 – Present</div>
+        <a href="https://github.com/Bryte-Edu/server" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">Bryte AI Platform <span class="arrow-icon">↗</span></span>
+              <span class="project-badge">Kotlin Multiplatform</span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/Bryte-Edu/server" target="_blank" class="icon-link" title="GitHub Repository">↗</a>
-            </div>
+            <span class="project-date">2024 — Present</span>
           </div>
-          <p class="project-summary">Bryte is a Kotlin Multiplatform backend for multi-modal document ingestion, GraphRAG-based knowledge synthesis, and a native FSRS v4 spaced-repetition engine for large-context learning systems.</p>
-          <div class="tag-cloud">
+          <div class="project-meta-row">
+            <span class="project-role">Creator &amp; Systems Developer</span>
+          </div>
+          <p class="project-desc">High-throughput backend for multimodal document ingestion, GraphRAG knowledge synthesis, vector indexing, and a native FSRS v4 spaced repetition engine.</p>
+          <div class="project-tags">
             <span class="tag">GraphRAG</span>
             <span class="tag">Kotlin</span>
             <span class="tag">Vector Search</span>
+            <span class="tag">AI Infrastructure</span>
           </div>
-        </article>
+        </a>
 
         <!-- OpenJDK & Kotlin Compiler Ports -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">OpenJDK &amp; Kotlin Compiler Ports</span>
-                <span class="project-role">Lead Systems Developer</span>
-              </div>
-              <div class="project-date">Sept 2023 – Present</div>
+        <a href="https://github.com/PranavPurwar/javac-android" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">OpenJDK &amp; Kotlin Compiler Ports <span class="arrow-icon">↗</span></span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/PranavPurwar/javac-android" target="_blank" class="icon-link" title="javac-android">↗</a>
-              <a href="https://github.com/PranavPurwar/kotlinc-android" target="_blank" class="icon-link" title="kotlinc-android">↗</a>
-            </div>
+            <span class="project-date">2023 — Present</span>
           </div>
-          <p class="project-summary">Patched Java and Kotlin compilers adjusted to run on Android/ART, enabling reliable on-device compilation and toolchain integration for mobile IDEs.</p>
-          <div class="tag-cloud">
+          <div class="project-meta-row">
+            <span class="project-role">Lead Systems Developer</span>
+          </div>
+          <p class="project-desc">Patched OpenJDK (javac) and Kotlin compiler toolchains running on Android/ART, enabling reliable on-device compilation and build pipelines for mobile IDEs.</p>
+          <div class="project-tags">
             <span class="tag">OpenJDK</span>
             <span class="tag">Kotlin</span>
             <span class="tag">ART</span>
+            <span class="tag">Toolchains</span>
           </div>
-        </article>
+        </a>
 
-        <!-- Official Kotlin Compiler Contribution -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">Kotlin Compiler — Upstream PR</span>
-                <span class="project-role">JetBrains Contributor</span>
-              </div>
-              <div class="project-date">Nov 2023</div>
+        <!-- Kotlin Compiler Upstream PR -->
+        <a href="https://github.com/JetBrains/kotlin/pull/5146" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">Kotlin Compiler (JetBrains) <span class="arrow-icon">↗</span></span>
+              <span class="project-badge stats">PR #5146</span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/JetBrains/kotlin/pull/5146" target="_blank" class="icon-link" title="PR #5146">↗</a>
-            </div>
+            <span class="project-date">Nov 2023</span>
           </div>
-          <p class="project-summary">Upstream Kotlin compiler contribution fixing a critical JAR filesystem memory leak to improve build reliability under heavy workloads.</p>
-          <div class="tag-cloud">
+          <div class="project-meta-row">
+            <span class="project-role">Upstream Contributor</span>
+          </div>
+          <p class="project-desc">Upstream contribution to the official Kotlin compiler resolving a critical JAR filesystem memory leak during intensive compiler runs.</p>
+          <div class="project-tags">
             <span class="tag">Kotlin</span>
-            <span class="tag">Compiler</span>
+            <span class="tag">Compilers</span>
+            <span class="tag">Memory Management</span>
           </div>
-        </article>
+        </a>
 
         <!-- Sketchware-Pro -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">Sketchware‑Pro</span>
-                <span class="project-role">Core Team</span>
-                <span class="tag">1.6k+ stars, 1.1M+ downloads</span>
-              </div>
-              <div class="project-date">Aug 2021 – Present</div>
+        <a href="https://github.com/Sketchware-Pro/Sketchware-Pro" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">Sketchware‑Pro <span class="arrow-icon">↗</span></span>
+              <span class="project-badge stats">1.6k+ stars · 1.1M+ downloads</span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/Sketchware-Pro/Sketchware-Pro" target="_blank" class="icon-link" title="GitHub Repository">↗</a>
-            </div>
+            <span class="project-date">2021 — Present</span>
           </div>
-          <p class="project-summary">Sketchware‑Pro: source and tooling for a mobile IDE focused on accessibility and community-driven extensions; used widely for on-device development workflows.</p>
-          <div class="tag-cloud">
+          <div class="project-meta-row">
+            <span class="project-role">Core Team</span>
+          </div>
+          <p class="project-desc">Mobile development IDE and build infrastructure focused on on-device visual and source-level development workflows for Android.</p>
+          <div class="project-tags">
             <span class="tag">Mobile IDE</span>
             <span class="tag">Build Systems</span>
+            <span class="tag">Gradle</span>
           </div>
-        </article>
+        </a>
 
         <!-- Reef -->
-        <article class="project-card">
-          <div class="card-top">
-            <div>
-              <div class="project-meta">
-                <span class="project-name">Reef</span>
-                <span class="project-role">Systems Architect</span>
-              </div>
-              <div class="project-date">Sept 2024 – Present</div>
+        <a href="https://github.com/aload0/Reef" target="_blank" class="project-item">
+          <div class="project-header">
+            <div class="project-title-group">
+              <span class="project-name">Reef <span class="arrow-icon">↗</span></span>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/aload0/Reef" target="_blank" class="icon-link" title="GitHub Repository">↗</a>
-            </div>
+            <span class="project-date">2024 — Present</span>
           </div>
-          <p class="project-summary">Reef: open-source Android app for digital wellbeing — app blocking, routines, and screen-time analytics, designed to be free and privacy-preserving.</p>
-          <div class="tag-cloud">
-            <span class="tag">Telemetry</span>
+          <div class="project-meta-row">
+            <span class="project-role">Systems Architect</span>
+          </div>
+          <p class="project-desc">Privacy-first digital wellbeing application for Android featuring app blocking, routine automation, and local telemetry analytics.</p>
+          <div class="project-tags">
             <span class="tag">Android</span>
+            <span class="tag">Telemetry</span>
+            <span class="tag">Privacy</span>
           </div>
-        </article>
+        </a>
 
+      </div>
+    </section>
+
+    <!-- Interactive Terminal Shell -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Interactive Terminal</h2>
+      </div>
+
+      <div class="terminal-block">
+        <div class="terminal-bar">
+          <div class="terminal-prompt-label">
+            <span>pranav@systems ~ %</span>
+          </div>
+          <span>zsh interactive</span>
+        </div>
+
+        <div id="termOutTop" class="terminal-output">Type `help` for commands or run `skills`, `about`, `email`.</div>
+
+        <div class="terminal-input-row">
+          <span>❯</span>
+          <input id="termInTop" autocomplete="off" spellcheck="false" placeholder="Type a command and press Enter..." />
+        </div>
       </div>
     </section>
 
@@ -261,15 +241,15 @@
         © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.
       </div>
       <div class="footer-links">
-        <a href="/cv.pdf" download>Download CV (PDF)</a>
-        <a href="donate.html">Sponsor / Donate</a>
+        <a href="/cv.pdf" download>CV</a>
+        <a href="donate.html">Sponsor</a>
         <a href="mailto:purwarpranav80@gmail.com">Contact</a>
       </div>
     </footer>
 
   </div>
 
-  <div id="toast" class="toast">Email address copied to clipboard!</div>
+  <div id="toast" class="toast">Email copied to clipboard</div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -281,67 +261,21 @@
         toast.classList.add('show');
         setTimeout(() => {
           toast.classList.remove('show');
-        }, 2500);
+        }, 2200);
       }).catch(err => {
         console.error('Failed to copy: ', err);
       });
     }
 
-    // Terminal scripting (slash-commands + ANSI/xterm256 color rendering)
+    // Terminal scripting
     (function(){
       const out = document.getElementById('termOutTop');
       const input = document.getElementById('termInTop');
 
       function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-      function xtermColor(n){
-        n = Number(n);
-        const palette = {
-          38: '#38bdf8', // Sky accent
-          75: '#38bdf8', // Sky
-          80: '#10b981', // Emerald
-          82: '#38bdf8', // Prompt cyan
-          196: '#f43f5e', // Rose / error
-          208: '#f59e0b' // Amber
-        };
-        if (palette[n]) return palette[n];
-        if (n >= 232 && n <= 255) {
-          const gray = 100 + (n - 232) * 6;
-          return 'rgb('+gray+','+gray+','+gray+')';
-        }
-        return '#f1f5f9';
-      }
-
-      function ansiToHtml(str){
-        let outHtml = '';
-        let last = 0;
-        const regex = /\u001b\[([0-9;]+)m/g;
-        let m;
-        const openSpans = [];
-        while((m = regex.exec(str))){
-          outHtml += escapeHtml(str.slice(last, m.index)).replace(/\n/g,'<br>');
-          last = regex.lastIndex;
-          const codes = m[1].split(';').map(Number);
-          for(let i=0;i<codes.length;i++){
-            const c = codes[i];
-            if(c === 0){
-              while(openSpans.length) outHtml += '</span>', openSpans.pop();
-            } else if(c === 1){
-              outHtml += '<span style="font-weight:700;color:#f1f5f9">'; openSpans.push('b');
-            } else if(c === 38 && codes[i+1] === 5){
-              const col = codes[i+2];
-              const css = xtermColor(col) || '#f1f5f9';
-              outHtml += '<span style="color:'+css+'">'; openSpans.push('c');
-            }
-          }
-        }
-        outHtml += escapeHtml(str.slice(last)).replace(/\n/g,'<br>');
-        while(openSpans.length) outHtml += '</span>', openSpans.pop();
-        return outHtml;
-      }
-
-      function appendAnsi(s){
-        out.innerHTML += '<div>'+ansiToHtml(s)+'</div>';
+      function appendText(html){
+        out.innerHTML += '<div>' + html + '</div>';
         out.scrollTop = out.scrollHeight;
       }
 
@@ -349,27 +283,34 @@
         if(!raw) return;
         let cmd = raw.trim();
         if(cmd.startsWith('/')) cmd = cmd.slice(1);
-        appendAnsi('\u001b[38;5;82m$ '+escapeHtml(raw)+'\u001b[0m');
+        appendText('<span style="color:#8e8e93">$ ' + escapeHtml(raw) + '</span>');
         const parts = cmd.split(/\s+/);
         const c = parts[0].toLowerCase();
+
         if(c === 'help'){
-          appendAnsi('\u001b[38;5;75mhelp\u001b[0m   - show available commands\n\u001b[38;5;75mname\u001b[0m   - display name\n\u001b[38;5;75memail\u001b[0m  - contact email\n\u001b[38;5;75mabout\u001b[0m  - background & specialization\n\u001b[38;5;75mskills\u001b[0m - core engineering domains\n\u001b[38;5;75mclear\u001b[0m  - clear terminal output');
-        } else if(c === 'name'){
-          appendAnsi('\u001b[1mPranav Purwar\u001b[0m');
-        } else if(c === 'email'){
-          appendAnsi('\u001b[38;5;208mpurwarpranav80@gmail.com\u001b[0m');
+          appendText('<span style="color:#38bdf8">help</span>   - view available commands\n<span style="color:#38bdf8">about</span>  - engineer overview & focus\n<span style="color:#38bdf8">skills</span> - core technical domains\n<span style="color:#38bdf8">email</span>  - copy/show contact email\n<span style="color:#38bdf8">clear</span>  - clear terminal output');
         } else if(c === 'about'){
-          appendAnsi('Systems Engineer focused on JVM internals, compiler toolchains, ART, and mobile runtime virtualization.');
+          appendText('Systems Engineer focused on JVM internals, compiler toolchains, ART, and mobile runtime virtualization.');
         } else if(c === 'skills'){
-          appendAnsi('\u001b[38;5;80mKotlin\u001b[0m, \u001b[38;5;80mCompilers (javac/kotlinc)\u001b[0m, \u001b[38;5;80mAndroid Internals\u001b[0m, \u001b[38;5;80mOS Virtualization\u001b[0m, \u001b[38;5;80mAI Infra (GraphRAG)\u001b[0m');
+          appendText('<span style="color:#10b981">Kotlin</span>, <span style="color:#10b981">Compilers (javac/kotlinc)</span>, <span style="color:#10b981">Android Internals</span>, <span style="color:#10b981">OS Virtualization</span>, <span style="color:#10b981">GraphRAG & AI Infra</span>');
+        } else if(c === 'email'){
+          appendText('purwarpranav80@gmail.com');
+        } else if(c === 'name'){
+          appendText('Pranav Purwar (@invokevirtual)');
         } else if(c === 'clear'){
           out.innerHTML = '';
         } else {
-          appendAnsi('\u001b[38;5;196mUnknown command: '+escapeHtml(c)+'. Type `help` for commands.\u001b[0m');
+          appendText('<span style="color:#f43f5e">Unknown command: ' + escapeHtml(c) + '. Type `help` for commands.</span>');
         }
       }
 
-      input.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ handle(input.value); input.value=''; input.focus(); } });
+      input.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter'){
+          handle(input.value);
+          input.value = '';
+          input.focus();
+        }
+      });
     })();
   </script>
 

@@ -45,7 +45,7 @@ def regen_index(posts):
         '  <title>Blog — Pranav Purwar</title>',
         '  <link rel="preconnect" href="https://fonts.googleapis.com">',
         '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-        '  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">',
+        '  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">',
         '  <link rel="stylesheet" href="/styles.css">',
         '</head>',
         '<body>',
@@ -53,41 +53,38 @@ def regen_index(posts):
         '    <nav class="nav-header">',
         '      <a href="/" class="nav-brand">',
         '        <div class="avatar-box"><img src="https://avatars.githubusercontent.com/u/75154889?v=4" alt="Pranav Purwar"></div>',
-        '        <div>',
-        '          <div class="brand-title">Pranav Purwar</div>',
-        '          <div class="brand-handle">@invokevirtual</div>',
+        '        <div class="brand-meta">',
+        '          <span class="brand-title">Pranav Purwar</span>',
+        '          <span class="brand-handle">@invokevirtual</span>',
         '        </div>',
         '      </a>',
         '      <div class="nav-links">',
         '        <a href="/" class="nav-link">Home</a>',
         '        <a href="/blog/index.html" class="nav-link">Blog</a>',
-        '        <a href="/cv.pdf" class="btn btn-outline" download>Download CV</a>',
+        '        <a href="/cv.pdf" class="btn" download>CV</a>',
         '        <a href="/donate.html" class="btn btn-primary">Sponsor</a>',
         '      </div>',
         '    </nav>',
-        '    <section class="hero-section">',
+        '    <div class="hero-section">',
         '      <h1 class="hero-title">Blog</h1>',
-        '      <p class="hero-subtitle">Notes and technical deep-dives on Android internals, JVM runtime engineering, and compiler toolchains.</p>',
-        '    </section>',
+        '      <p class="hero-subtitle">Notes and technical writings on JVM internals, compiler toolchains, ART runtime mechanics, and Android virtualization.</p>',
+        '    </div>',
         '    <section id="posts" class="section">',
-        '      <div class="projects-grid">'
+        '      <div class="section-header">',
+        '        <h2 class="section-title">All Posts</h2>',
+        '      </div>',
+        '      <div class="projects-feed">'
     ]
     for p in posts:
-        lines.append('        <article class="project-card">')
-        lines.append('          <div class="card-top">')
-        lines.append('            <div>')
-        lines.append('              <div class="project-meta">')
-        lines.append(f'                <span class="project-name"><a href="{p["file"]}">{p["title"]}</a></span>')
-        lines.append('              </div>')
-        if p.get('date'):
-            lines.append(f'              <div class="project-date"><time datetime="{p["date"]}">{p["date"]}</time></div>')
-        lines.append('            </div>')
-        lines.append('            <div class="card-links">')
-        lines.append(f'              <a href="{p["file"]}" class="icon-link">↗</a>')
-        lines.append('            </div>')
+        date_str = p.get('date', '')
+        lines.append(f'        <a href="{p["file"]}" class="project-item">')
+        lines.append('          <div class="project-header">')
+        lines.append(f'            <span class="project-name">{p["title"]} <span class="arrow-icon">↗</span></span>')
+        if date_str:
+            lines.append(f'            <span class="project-date">{date_str}</span>')
         lines.append('          </div>')
-        lines.append('          <p class="project-summary">Notes on Android, JVM, and modern software.</p>')
-        lines.append('        </article>')
+        lines.append('          <p class="project-desc">Notes on Android, JVM internals, and systems development.</p>')
+        lines.append('        </a>')
     lines.extend([
         '      </div>',
         '    </section>',
@@ -96,8 +93,8 @@ def regen_index(posts):
         '        © <span id="year">2026</span> Pranav Purwar. Hosted on <a href="https://github.com/PranavPurwar" target="_blank">GitHub Pages</a>.',
         '      </div>',
         '      <div class="footer-links">',
-        '        <a href="/cv.pdf" download>Download CV (PDF)</a>',
-        '        <a href="/donate.html">Sponsor / Donate</a>',
+        '        <a href="/cv.pdf" download>CV</a>',
+        '        <a href="/donate.html">Sponsor</a>',
         '        <a href="mailto:purwarpranav80@gmail.com">Contact</a>',
         '      </div>',
         '    </footer>',
