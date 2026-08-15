@@ -16,7 +16,7 @@ cv:
       - "Systems Engineer working on **JVM internals**, **compilers**, **AI infrastructure**, and **Android OS virtualization**. Creator of **Cosmic IDE** (**700+ stars**, **100+ forks**), bringing rootless Arch Linux environments to Android, and **Bryte AI Platform** (GraphRAG & FSRS v4 scheduling). Contributor to Android developer tools with **1.2M+ downloads** and **100k+ MAU**."
 
     experience:
-      - name: "Cosmic IDE | Creator & Architect"
+      - name: "Cosmic IDE | Author & Maintainer"
         location: "[**GitHub**](https://github.com/aload0/Cosmic-IDE)"
         start_date: "2021-08"
         highlights:
@@ -26,7 +26,7 @@ cv:
           - "**Language & Project Toolchains**: Built a plugin marketplace delivering complete language, project build system (Gradle, Cargo, Maven), and on-device Language Server Protocol (LSP) support across **11+ languages** (Rust, Java, Kotlin, Scala, Go, C/C++, Python, etc.)."
           - "**Plugin Architecture**: Engineered dynamic plugin loading for language definitions, custom build commands, and syntax schemas decoupled from core app releases."
 
-      - name: "Bryte AI Platform (Open-Source) | Creator & Lead Developer"
+      - name: "Bryte AI Platform | Author & Maintainer"
         location: "[**GitHub**](https://github.com/Bryte-Edu/server)"
         start_date: "2024-09"
         highlights:
@@ -36,7 +36,7 @@ cv:
           - "Orchestrated multi-step LLM workflows using JetBrains Koog with context compression, plus a streaming Markdown parser with mid-stream table recovery."
           - "Streamed generated flashcards and questions in real time using type-safe **`kotlinx.rpc` over WebSockets**, multiplexing multiple services over a single connection."
 
-      - name: "OpenJDK & Kotlin Compiler Ports (Android)"
+      - name: "OpenJDK & Kotlin Compiler Ports (Android) | Author & Maintainer"
         location: "[**OpenJDK**](https://github.com/PranavPurwar/javac-android) | [**Kotlin**](https://github.com/PranavPurwar/kotlinc-android)"
         start_date: "2023-09"
         highlights:
@@ -44,7 +44,7 @@ cv:
           - "**NIO & Memory Fixes**: Bypassed Android's restricted NIO via custom `ZipFileSystem` for `ct.sym`; used HiddenApi Bypass to invoke `NioUtils.freeDirectBuffer`, fixing fatal off-heap OOM crashes during JAR parsing."
           - "**Upstream Contribution**: Authored PR [`JetBrains/kotlin#5146`](https://github.com/JetBrains/kotlin/pull/5146) fixing a direct-buffer memory leak in `ZipImplementation` when using `-Xuse-fast-jar-file-system`."
 
-      - name: "Sketchware-Pro | Core Team"
+      - name: "Sketchware-Pro | Core Maintainer"
         location: "[**GitHub**](https://github.com/Sketchware-Pro/Sketchware-Pro)"
         start_date: "2021-08"
         highlights:
@@ -52,7 +52,7 @@ cv:
           - "Integrated **R8/D8 Code Shrinker** and added Java 9/11+ compilation pipelines, cutting output APK sizes by **~40%**."
           - "Engineered on-device compile-time **ViewBinding generator** from XML layouts and recursive AAR/JAR dependency resolver."
 
-      - name: "Reef | Creator"
+      - name: "Reef | Author & Maintainer"
         location: "[**GitHub**](https://github.com/aload0/Reef)"
         start_date: "2024-09"
         highlights:

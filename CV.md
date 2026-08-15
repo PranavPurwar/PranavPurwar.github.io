@@ -10,7 +10,7 @@
 Systems Engineer working on **JVM internals**, **compilers**, **AI infrastructure**, and **Android OS virtualization**. Creator of **Cosmic IDE** (**700+ stars**, **100+ forks**), bringing rootless Arch Linux environments to Android, and **Bryte AI Platform** (GraphRAG & FSRS v4 scheduling). Contributor to Android developer tools with **1.2M+ downloads** and **100k+ MAU**.
 
 # Experience
-## **Cosmic IDE | Creator & Architect**
+## **Cosmic IDE | Author & Maintainer**
 
 [**GitHub**](https://github.com/aload0/Cosmic-IDE)
 
@@ -28,7 +28,7 @@ Aug 2021 – present
 
 
 
-## **Bryte AI Platform (Open-Source) | Creator & Lead Developer**
+## **Bryte AI Platform | Author & Maintainer**
 
 [**GitHub**](https://github.com/Bryte-Edu/server)
 
@@ -46,7 +46,7 @@ Sept 2024 – present
 
 
 
-## **OpenJDK & Kotlin Compiler Ports (Android)**
+## **OpenJDK & Kotlin Compiler Ports (Android) | Author & Maintainer**
 
 [**OpenJDK**](https://github.com/PranavPurwar/javac-android) | [**Kotlin**](https://github.com/PranavPurwar/kotlinc-android)
 
@@ -60,7 +60,7 @@ Sept 2023 – present
 
 
 
-## **Sketchware-Pro | Core Team**
+## **Sketchware-Pro | Core Maintainer**
 
 [**GitHub**](https://github.com/Sketchware-Pro/Sketchware-Pro)
 
@@ -74,7 +74,7 @@ Aug 2021 – present
 
 
 
-## **Reef | Creator**
+## **Reef | Author & Maintainer**
 
 [**GitHub**](https://github.com/aload0/Reef)
 
